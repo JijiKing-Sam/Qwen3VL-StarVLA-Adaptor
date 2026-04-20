@@ -38,6 +38,7 @@ from starVLA.dataloader import build_dataloader
 from starVLA.model.framework import build_framework
 from starVLA.training.trainer_utils.config_tracker import AccessTrackedConfig, wrap_config
 from starVLA.training.trainer_utils.trainer_tools import TrainerUtils, build_param_lr_groups, normalize_dotlist_args
+from deployment.model_server.tools.trace_tools import should_trace, trace
 
 deepspeed_plugin = DeepSpeedPlugin()
 # Avoid default c10d 30-minute timeout (1800000ms) on slow/imbalanced steps.
@@ -54,6 +55,75 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 logger = get_logger(__name__)
 
 
+def _dist_rank() -> int:
+    if dist.is_available() and dist.is_initialized():
+        return dist.get_rank()
+    return 0
+
+
+def _dist_world_size() -> int:
+    if dist.is_available() and dist.is_initialized():
+        return dist.get_world_size()
+    return 1
+
+
+def _safe_len(obj):
+    try:
+        return len(obj)
+    except Exception:
+        return None
+
+
+def _model_runtime_summary(model):
+    try:
+        first_param = next(model.parameters())
+        dtype = str(first_param.dtype)
+        device = str(first_param.device)
+    except StopIteration:
+        dtype = None
+        device = None
+    total_params = sum(p.numel() for p in model.parameters())
+    trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    return {
+        "type": type(model).__name__,
+        "device": device,
+        "dtype": dtype,
+        "total_params": total_params,
+        "trainable_params": trainable_params,
+    }
+
+
+def _dataloader_summary(dataloader):
+    dataset = getattr(dataloader, "dataset", None)
+    collate_fn = getattr(dataloader, "collate_fn", None)
+    return {
+        "type": type(dataloader).__name__,
+        "dataset_type": type(dataset).__name__ if dataset is not None else None,
+        "dataset_len": _safe_len(dataset),
+        "dataloader_len": _safe_len(dataloader),
+        "batch_size": getattr(dataloader, "batch_size", None),
+        "num_workers": getattr(dataloader, "num_workers", None),
+        "collate_fn": getattr(collate_fn, "__name__", repr(collate_fn)),
+    }
+
+
+def _optimizer_summary(optimizer):
+    groups = []
+    for group in optimizer.param_groups:
+        params = group.get("params", [])
+        groups.append(
+            {
+                "name": group.get("name"),
+                "lr": group.get("lr"),
+                "weight_decay": group.get("weight_decay"),
+                "num_param_tensors": len(params),
+                "num_params": sum(p.numel() for p in params),
+                "trainable_params": sum(p.numel() for p in params if getattr(p, "requires_grad", False)),
+            }
+        )
+    return {"type": type(optimizer).__name__, "groups": groups}
+
+
 def load_fast_tokenizer():
     return AutoProcessor.from_pretrained("physical-intelligence/fast", trust_remote_code=True)
 
@@ -67,16 +137,38 @@ def setup_directories(cfg) -> Path:
         os.makedirs(output_dir, exist_ok=True)
         os.makedirs(output_dir / "checkpoints", exist_ok=True)
 
+    trace(
+        "train.setup_directories",
+        output_dir=str(output_dir),
+        checkpoint_dir=str(output_dir / "checkpoints"),
+        rank=_dist_rank(),
+        world_size=_dist_world_size(),
+    )
     return output_dir
 
 
 def prepare_data(cfg, accelerator, output_dir) -> DataLoader:
     """Prepare VLA training data."""
     logger.info(f"Creating VLA Dataset with Mixture `{cfg.datasets.vla_data.data_mix}`")
+    trace(
+        "train.prepare_data.start",
+        data_root_dir=cfg.datasets.vla_data.get("data_root_dir", None),
+        data_mix=cfg.datasets.vla_data.get("data_mix", None),
+        dataset_py=cfg.datasets.vla_data.get("dataset_py", None),
+        per_device_batch_size=cfg.datasets.vla_data.get("per_device_batch_size", None),
+        output_dir=str(output_dir),
+        rank=_dist_rank(),
+    )
     vla_train_dataloader = build_dataloader(cfg=cfg, dataset_py=cfg.datasets.vla_data.dataset_py)
 
     accelerator.dataloader_config.dispatch_batches = False
     dist.barrier()
+    trace(
+        "train.prepare_data.end",
+        dataloader=_dataloader_summary(vla_train_dataloader),
+        dispatch_batches=accelerator.dataloader_config.dispatch_batches,
+        rank=_dist_rank(),
+    )
     return vla_train_dataloader
 
 
@@ -103,6 +195,15 @@ def setup_optimizer_and_scheduler(model, cfg) -> Tuple[torch.optim.Optimizer, to
         scheduler_specific_kwargs=cfg.trainer.scheduler_specific_kwargs,
     )
 
+    trace(
+        "train.optimizer_scheduler",
+        model=_model_runtime_summary(model),
+        optimizer=_optimizer_summary(optimizer),
+        lr_scheduler_type=cfg.trainer.lr_scheduler_type,
+        num_warmup_steps=cfg.trainer.num_warmup_steps,
+        max_train_steps=cfg.trainer.max_train_steps,
+        rank=_dist_rank(),
+    )
     return optimizer, lr_scheduler
 
 
@@ -122,6 +223,15 @@ class VLATrainer(TrainerUtils):
         rank = dist.get_rank() if dist.is_initialized() else 0
         seed = self.config.seed + rank if hasattr(self.config, "seed") else rank + 3047
         set_seed(seed)
+        trace(
+            "train.prepare_training.start",
+            rank=rank,
+            world_size=_dist_world_size(),
+            seed=seed,
+            total_batch_size=self.total_batch_size,
+            gradient_accumulation_steps=self.accelerator.gradient_accumulation_steps,
+            accelerator_state=str(self.accelerator.state),
+        )
 
         self._init_checkpointing()
         self._adjust_lr_scheduler_for_resume()
@@ -133,12 +243,27 @@ class VLATrainer(TrainerUtils):
         )
         self.model = self.freeze_backbones(self.model, freeze_modules=freeze_modules)
         self.print_trainable_parameters(self.model)
+        trace(
+            "train.prepare_training.after_freeze",
+            freeze_modules=freeze_modules,
+            model=_model_runtime_summary(self.model),
+            resume_from_checkpoint=getattr(self, "resume_from_checkpoint", None),
+            completed_steps=self.completed_steps,
+            rank=rank,
+        )
 
         self.model, self.optimizer, self.vla_train_dataloader = self.setup_distributed_training(
             self.accelerator,
             self.model,
             self.optimizer,
             self.vla_train_dataloader,
+        )
+        trace(
+            "train.prepare_training.after_accelerate_prepare",
+            model=_model_runtime_summary(self.model),
+            optimizer=_optimizer_summary(self.optimizer),
+            dataloader=_dataloader_summary(self.vla_train_dataloader),
+            rank=rank,
         )
 
         self._init_wandb()
@@ -179,6 +304,13 @@ class VLATrainer(TrainerUtils):
                 logger.info(
                     f"Resuming training from checkpoint: {self.resume_from_checkpoint}, steps: {self.completed_steps}"
                 )
+                trace(
+                    "train.checkpoint.resume",
+                    checkpoint_dir=self.checkpoint_dir,
+                    resume_from_checkpoint=self.resume_from_checkpoint,
+                    completed_steps=self.completed_steps,
+                    rank=_dist_rank(),
+                )
                 return
 
             logger.warning(f"No valid checkpoint found in {self.checkpoint_dir}. Starting training from scratch.")
@@ -190,9 +322,17 @@ class VLATrainer(TrainerUtils):
             self.completed_steps = 0
             self.resume_from_checkpoint = pretrained_checkpoint
             logger.info(f"Loaded pretrained checkpoint: {pretrained_checkpoint}, steps: {self.completed_steps}")
+            trace(
+                "train.checkpoint.pretrained_loaded",
+                pretrained_checkpoint=pretrained_checkpoint,
+                reload_modules=reload_modules,
+                completed_steps=self.completed_steps,
+                rank=_dist_rank(),
+            )
         else:
             logger.info("No pretrained checkpoint provided. Starting training from scratch.")
             self.completed_steps = 0
+            trace("train.checkpoint.none", checkpoint_dir=self.checkpoint_dir, completed_steps=self.completed_steps, rank=_dist_rank())
 
     def _adjust_lr_scheduler_for_resume(self):
         """Adjust LR scheduler state after resuming from non-zero steps."""
@@ -229,6 +369,14 @@ class VLATrainer(TrainerUtils):
             with open(os.path.join(self.config.output_dir, "summary.jsonl"), "a") as f:
                 f.write(json.dumps(summary_data) + "\n")
             self.accelerator.print(f"✅ Checkpoint saved at {checkpoint_path}")
+            trace(
+                "train.checkpoint.save",
+                checkpoint_path=checkpoint_path,
+                save_format=save_format,
+                completed_steps=self.completed_steps,
+                summary_data=summary_data,
+                rank=_dist_rank(),
+            )
 
             if isinstance(self.config, AccessTrackedConfig):
                 logger.info("📊 Saving accessed configuration...")
@@ -248,6 +396,7 @@ class VLATrainer(TrainerUtils):
             metrics["epoch"] = round(self.completed_steps / len(self.vla_train_dataloader), 2)
             wandb.log(metrics, step=self.completed_steps)
             logger.info(f"Step {self.completed_steps}, Loss: {metrics})")
+            trace("train.metrics", step=self.completed_steps, metrics=metrics, rank=_dist_rank())
 
     def _create_data_iterators(self):
         """Create data iterators."""
@@ -265,12 +414,25 @@ class VLATrainer(TrainerUtils):
             )
             batch_vla = next(self.vla_iter)
 
+        if should_trace("train.batch", step=self.completed_steps):
+            trace("train.batch", step=self.completed_steps, batch=batch_vla, batch_size=len(batch_vla), rank=_dist_rank())
         return batch_vla
 
     def train(self):
         """Execute training loop."""
         self._log_training_config()
         self._create_data_iterators()
+        trace(
+            "train.loop.start",
+            max_train_steps=self.config.trainer.max_train_steps,
+            completed_steps=self.completed_steps,
+            eval_interval=self.config.trainer.eval_interval,
+            save_interval=self.config.trainer.save_interval,
+            logging_frequency=self.config.trainer.logging_frequency,
+            total_batch_size=self.total_batch_size,
+            dataloader=_dataloader_summary(self.vla_train_dataloader),
+            rank=_dist_rank(),
+        )
         progress_bar = tqdm(
             range(self.config.trainer.max_train_steps), disable=not self.accelerator.is_local_main_process
         )
@@ -301,6 +463,17 @@ class VLATrainer(TrainerUtils):
 
             step_metrics["data_time"] = t_end_data - t_start_data
             step_metrics["model_time"] = t_end_model - t_start_model
+            if should_trace("train.step.timing", step=self.completed_steps):
+                trace(
+                    "train.step.timing",
+                    step=self.completed_steps,
+                    sync_gradients=self.accelerator.sync_gradients,
+                    data_time=step_metrics["data_time"],
+                    model_time=step_metrics["model_time"],
+                    metrics=step_metrics,
+                    lr=self.lr_scheduler.get_last_lr(),
+                    rank=_dist_rank(),
+                )
             self._log_metrics(step_metrics)
 
             if self.completed_steps % self.config.trainer.save_interval == 0 and self.completed_steps > 0:
@@ -315,6 +488,7 @@ class VLATrainer(TrainerUtils):
         """Run simple action-eval on current batch and attach score to metrics."""
         examples = self._get_next_batch()
         actions = [example["action"] for example in examples]
+        trace("train.eval_action_model.input", step=self.completed_steps, examples=examples, actions=actions, rank=_dist_rank())
         output_dict = self.model.predict_action(examples=examples, use_ddim=True, num_ddim_steps=20)
 
         if self.accelerator.is_main_process:
@@ -323,6 +497,15 @@ class VLATrainer(TrainerUtils):
             num_pots = np.prod(actions.shape)
             score = TrainerUtils.euclidean_distance(normalized_actions, actions)
             step_metrics["mse_score"] = score / num_pots
+            trace(
+                "train.eval_action_model.output",
+                step=self.completed_steps,
+                normalized_actions=normalized_actions,
+                actions=actions,
+                score=score,
+                mse_score=step_metrics["mse_score"],
+                rank=_dist_rank(),
+            )
 
         del examples
         dist.barrier()
@@ -339,20 +522,57 @@ class VLATrainer(TrainerUtils):
 
     def _train_step(self, batch_vla, batch_vlm=None):
         """Execute single training step."""
+        do_trace = should_trace("train.train_step", step=self.completed_steps)
+        if do_trace:
+            trace(
+                "train.train_step.input",
+                step=self.completed_steps,
+                batch=batch_vla,
+                sync_gradients=self.accelerator.sync_gradients,
+                rank=_dist_rank(),
+            )
         with self.accelerator.accumulate(self.model):
             self.optimizer.zero_grad()
+            if do_trace:
+                trace("train.train_step.zero_grad", step=self.completed_steps, rank=_dist_rank())
 
             with torch.autocast("cuda", dtype=torch.bfloat16):
                 output_dict = self.model.forward(batch_vla)
                 action_loss = output_dict["action_loss"]
                 total_loss = action_loss
+            if do_trace:
+                trace(
+                    "train.train_step.forward_output",
+                    step=self.completed_steps,
+                    output_dict=output_dict,
+                    action_loss=action_loss,
+                    total_loss=total_loss,
+                    rank=_dist_rank(),
+                )
 
             self.accelerator.backward(total_loss)
+            if do_trace:
+                trace("train.train_step.backward_done", step=self.completed_steps, total_loss=total_loss, rank=_dist_rank())
 
             if self.config.trainer.gradient_clipping is not None:
                 self.accelerator.clip_grad_norm_(self.model.parameters(), self.config.trainer.gradient_clipping)
+                if do_trace:
+                    trace(
+                        "train.train_step.grad_clip",
+                        step=self.completed_steps,
+                        gradient_clipping=self.config.trainer.gradient_clipping,
+                        rank=_dist_rank(),
+                    )
 
             self.optimizer.step()
+            if do_trace:
+                trace(
+                    "train.train_step.optimizer_step",
+                    step=self.completed_steps,
+                    sync_gradients=self.accelerator.sync_gradients,
+                    lr=self.lr_scheduler.get_last_lr(),
+                    rank=_dist_rank(),
+                )
             # Only step the scheduler when an actual optimizer update occurs.
             # Inside accelerator.accumulate(), optimizer.step() is a no-op on
             # non-sync micro-steps, but lr_scheduler.step() always advances
@@ -361,6 +581,8 @@ class VLATrainer(TrainerUtils):
             # to premature LR decay and incorrect LR on resume (#204).
             if self.accelerator.sync_gradients:
                 self.lr_scheduler.step()
+                if do_trace:
+                    trace("train.train_step.scheduler_step", step=self.completed_steps, lr=self.lr_scheduler.get_last_lr(), rank=_dist_rank())
 
         return {
             "action_dit_loss": action_loss.item(),
@@ -368,6 +590,18 @@ class VLATrainer(TrainerUtils):
 
     def _finalize_training(self):
         """Training end processing."""
+        if getattr(self.config.trainer, "skip_final_save", False):
+            trace(
+                "train.finalize.skip_save",
+                reason="trainer.skip_final_save",
+                completed_steps=self.completed_steps,
+                rank=_dist_rank(),
+            )
+            if self.accelerator.is_main_process:
+                wandb.finish()
+            self.accelerator.wait_for_everyone()
+            return
+
         if self.accelerator.is_main_process:
             save_format = getattr(self.config.trainer, "save_format", "pt")
             final_checkpoint = os.path.join(self.config.output_dir, "final_model")
@@ -382,6 +616,13 @@ class VLATrainer(TrainerUtils):
             else:
                 raise ValueError(f"Unsupported save_format `{save_format}`. Expected `pt` or `safetensors`.")
             logger.info(f"Training complete. Final model saved at {final_checkpoint}")
+            trace(
+                "train.finalize.save",
+                final_checkpoint=final_checkpoint,
+                save_format=save_format,
+                completed_steps=self.completed_steps,
+                rank=_dist_rank(),
+            )
 
         if self.accelerator.is_main_process:
             wandb.finish()
@@ -391,12 +632,23 @@ class VLATrainer(TrainerUtils):
 
 def main(cfg) -> None:
     logger.info("VLA Training :: Warming Up")
+    trace(
+        "train.main.start",
+        framework=cfg.framework.get("name", cfg.framework.get("framework_py", None)),
+        run_root_dir=cfg.get("run_root_dir", None),
+        run_id=cfg.get("run_id", None),
+        seed=cfg.get("seed", None),
+        max_train_steps=cfg.trainer.get("max_train_steps", None),
+        rank=_dist_rank(),
+        world_size=_dist_world_size(),
+    )
 
     cfg = wrap_config(cfg)
     logger.info("✅ Configuration wrapped for access tracking")
 
     output_dir = setup_directories(cfg=cfg)
     vla = build_framework(cfg)
+    trace("train.main.framework_built", model=_model_runtime_summary(vla), framework=type(vla).__name__, rank=_dist_rank())
     vla_train_dataloader = prepare_data(cfg=cfg, accelerator=accelerator, output_dir=output_dir)
     optimizer, lr_scheduler = setup_optimizer_and_scheduler(model=vla, cfg=cfg)
 

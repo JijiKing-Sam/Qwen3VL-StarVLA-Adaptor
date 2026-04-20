@@ -50,6 +50,7 @@ from starVLA.dataloader.gr00t_lerobot.schema import (
     LeRobotStateActionMetadata,
 )
 from starVLA.dataloader.gr00t_lerobot.transform import ComposedModalityTransform
+from deployment.model_server.tools.trace_tools import should_trace, trace
 
 from functools import partial
 from typing import Tuple, List
@@ -1362,7 +1363,19 @@ class LeRobotSingleDataset(Dataset):
         trajectory_id, base_index = self.all_steps[index]
         raw_data = self.get_step_data(trajectory_id, base_index)
         data = self.transforms(raw_data)
-        return self._pack_sample(data)
+        sample = self._pack_sample(data)
+        if should_trace("dataset.single.item"):
+            trace(
+                "dataset.single.item",
+                dataset_name=self.dataset_name,
+                index=index,
+                trajectory_id=trajectory_id,
+                base_index=base_index,
+                raw_data_keys=list(raw_data.keys()),
+                transformed_keys=list(data.keys()),
+                sample=sample,
+            )
+        return sample
 
     def _pack_sample(self, data: dict) -> dict:
         """Pack transformed modality data into training sample format."""
@@ -2361,6 +2374,19 @@ class LeRobotMixtureDataset(Dataset):
                 data = dataset.transforms(raw_data)
                 sample = dataset._pack_sample(data)
                 sample["robot_tag"] = dataset.tag
+                if should_trace("dataset.mixture.item"):
+                    trace(
+                        "dataset.mixture.item",
+                        mixture_index=index,
+                        dataset_name=dataset.dataset_name,
+                        trajectory_id=trajectory_id,
+                        step=step,
+                        attempt=attempt,
+                        sample_tries=sample_tries,
+                        raw_data_keys=list(raw_data.keys()),
+                        transformed_keys=list(data.keys()),
+                        sample=sample,
+                    )
                 return sample
                 
             except Exception as e:

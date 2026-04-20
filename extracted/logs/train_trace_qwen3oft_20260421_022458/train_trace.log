@@ -1,0 +1,362 @@
+[2026-04-21 02:25:04,658] [INFO] [real_accelerator.py:254:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-04-21 02:25:10,823] [INFO] [real_accelerator.py:254:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+04/21 [02:25:10] INFO     | >> gcc -pthread -B                       spawn.py:77
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/compiler_compat                 
+                          -Wno-unused-result -Wsign-compare -DNDEBUG            
+                          -fwrapv -O2 -Wall -fPIC -O2 -isystem                  
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/include -fPIC -O2               
+                          -isystem                                              
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/include -fPIC -c                
+                          /tmp/tmpll_p7qla/test.c -o                            
+                          /tmp/tmpll_p7qla/test.o                               
+                 INFO     | >> gcc -pthread -B                       spawn.py:77
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/compiler_compat                 
+                          /tmp/tmpll_p7qla/test.o -laio -o                      
+                          /tmp/tmpll_p7qla/a.out                                
+04/21 [02:25:11] INFO     | >> gcc -pthread -B                       spawn.py:77
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/compiler_compat                 
+                          -Wno-unused-result -Wsign-compare -DNDEBUG            
+                          -fwrapv -O2 -Wall -fPIC -O2 -isystem                  
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/include -fPIC -O2               
+                          -isystem                                              
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/include -fPIC -c                
+                          /tmp/tmp3iyzzh38/test.c -o                            
+                          /tmp/tmp3iyzzh38/test.o                               
+                 INFO     | >> gcc -pthread -B                       spawn.py:77
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/compiler_compat                 
+                          /tmp/tmp3iyzzh38/test.o -L/usr/local/cuda             
+                          -L/usr/local/cuda/lib64 -lcufile -o                   
+                          /tmp/tmp3iyzzh38/a.out                                
+                 INFO     | >> gcc -pthread -B                       spawn.py:77
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/compiler_compat                 
+                          -Wno-unused-result -Wsign-compare -DNDEBUG            
+                          -fwrapv -O2 -Wall -fPIC -O2 -isystem                  
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/include -fPIC -O2               
+                          -isystem                                              
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/include -fPIC -c                
+                          /tmp/tmp03kvh2cd/test.c -o                            
+                          /tmp/tmp03kvh2cd/test.o                               
+                 INFO     | >> gcc -pthread -B                       spawn.py:77
+                          /root/autodl-tmp/starvla-official-qwen3vl-            
+                          20260411/envs/starvla/compiler_compat                 
+                          /tmp/tmp03kvh2cd/test.o -laio -o                      
+                          /tmp/tmp03kvh2cd/a.out                                
+[2026-04-21 02:25:12,371] [INFO] [comm.py:669:init_distributed] cdb=None
+[2026-04-21 02:25:12,371] [INFO] [comm.py:700:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+[W421 02:25:12.660046126 Utils.hpp:165] Warning: Environment variable NCCL_BLOCKING_WAIT is deprecated; use TORCH_NCCL_BLOCKING_WAIT instead (function operator())
+[W421 02:25:12.660090998 Utils.hpp:136] Warning: Environment variable NCCL_ASYNC_ERROR_HANDLING is deprecated; use TORCH_NCCL_ASYNC_ERROR_HANDLING instead (function operator())
+Distributed environment: DEEPSPEED  Backend: nccl
+Num processes: 1
+Process index: 0
+Local process index: 0
+Device: cuda:0
+
+Mixed precision type: bf16
+ds_config: {'fp16': {'enabled': False}, 'bf16': {'enabled': True}, 'train_micro_batch_size_per_gpu': 'auto', 'train_batch_size': 'auto', 'gradient_accumulation_steps': 1, 'zero_optimization': {'stage': 2, 'allgather_partitions': True, 'allgather_bucket_size': 500000000.0, 'reduce_scatter': True, 'reduce_bucket_size': 500000000.0, 'overlap_comm': True, 'contiguous_gradients': True, 'cpu_offload': False}, 'gradient_clipping': 1.0, 'steps_per_print': inf}
+
+04/21 [02:25:12] INFO     | >> VLA Training :: Warming Up   train_starvla.py:634
+[STARVLA_TRACE] {"framework": "QwenOFT", "label": "train.main.start", "max_train_steps": 2, "pid": 2215, "rank": 0, "run_id": "train_trace_qwen3oft_20260421_022458", "run_root_dir": "./results/TraceTrain", "seed": 42, "ts": "2026-04-21 02:25:12", "world_size": 1}
+                 INFO     | >> ✅ Configuration wrapped for train_starvla.py:647
+                          access tracking                                       
+[STARVLA_TRACE] {"checkpoint_dir": "results/TraceTrain/train_trace_qwen3oft_20260421_022458/checkpoints", "label": "train.setup_directories", "output_dir": "results/TraceTrain/train_trace_qwen3oft_20260421_022458", "pid": 2215, "rank": 0, "ts": "2026-04-21 02:25:12", "world_size": 1}
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  3.46it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.85it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00,  2.93it/s]
+[STARVLA_TRACE] {"framework": "Qwenvl_OFT", "label": "train.main.framework_built", "model": {"items": {"device": "cpu", "dtype": "torch.bfloat16", "total_params": 4503438855, "type": "Qwenvl_OFT"}, "keys": ["type", "device", "dtype", "total_params", "trainable_params"], "len": 5, "type": "dict"}, "pid": 2215, "rank": 0, "ts": "2026-04-21 02:25:14"}
+04/21 [02:25:14] INFO     | >> Creating VLA Dataset with    train_starvla.py:152
+                          Mixture `libero_goal`                                 
+[STARVLA_TRACE] {"data_mix": "libero_goal", "data_root_dir": "playground/Datasets/LEROBOT_LIBERO_DATA", "dataset_py": "lerobot_datasets", "label": "train.prepare_data.start", "output_dir": "results/TraceTrain/train_trace_qwen3oft_20260421_022458", "per_device_batch_size": 1, "pid": 2215, "rank": 0, "ts": "2026-04-21 02:25:14"}
+/root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/starvla/lib/python3.10/site-packages/albumentations/__init__.py:13: UserWarning: A new version of Albumentations is available: 2.0.8 (you have 1.4.18). Upgrade using: pip install -U albumentations. To disable automatic update checks, set the environment variable NO_ALBUMENTATIONS_UPDATE to 1.
+  check_for_updates()
+[STARVLA_TRACE] {"action_mode": null, "action_type": "delta_qpos", "data_mix": "libero_goal", "data_root_dir": "playground/Datasets/LEROBOT_LIBERO_DATA", "dataset_py": "lerobot_datasets", "label": "dataloader.build_vla.start", "obs": "AccessTrackedConfig(datasets.vla_data.obs, list_len=1)", "per_device_batch_size": 1, "pid": 2215, "ts": "2026-04-21 02:25:16"}
+[LeRobot] Dataset libero_goal_no_noops_1.0.0_lerobot: using version v2.0
+[rank0]:[W421 02:25:16.158845217 ProcessGroupNCCL.cpp:4561] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. Specify device_ids in barrier() to force use of a particular device, or call init_process_group() with a device_id.
+Initialized dataset libero_goal_no_noops_1.0.0_lerobot with EmbodimentTag.FRANKA
+Dataset lengths: [52042]
+[STARVLA_TRACE] {"dataset_len": 52042, "dataset_type": "LeRobotMixtureDataset", "label": "dataloader.build_vla.dataset", "pid": 2215, "statistics_keys": null, "ts": "2026-04-21 02:25:17"}
+[STARVLA_TRACE] {"batch_size": 1, "dataloader_len": 52042, "dataloader_type": "DataLoader", "dataset_len": 52042, "label": "dataloader.build_vla.dataloader", "num_workers": 4, "pid": 2215, "ts": "2026-04-21 02:25:17"}
+Merged dataset statistics saved to: results/TraceTrain/train_trace_qwen3oft_20260421_022458/dataset_statistics.json
+Used action keys (reordered): ['x', 'y', 'z', 'roll', 'pitch', 'yaw', 'gripper']
+Used state keys (reordered): ['x', 'y', 'z', 'roll', 'pitch', 'yaw', 'pad', 'gripper']
+[STARVLA_TRACE] {"dataloader": {"items": {"dataloader_len": 52042, "dataset_len": 52042, "dataset_type": "LeRobotMixtureDataset", "type": "DataLoader"}, "keys": ["type", "dataset_type", "dataset_len", "dataloader_len", "batch_size", "num_workers", "collate_fn"], "len": 7, "type": "dict"}, "dispatch_batches": false, "label": "train.prepare_data.end", "pid": 2215, "rank": 0, "ts": "2026-04-21 02:25:17"}
+04/21 [02:25:17] INFO     | >> LR Group action_model:       train_starvla.py:188
+                          lr=0.0001, num_params=16                              
+[STARVLA_TRACE] {"label": "train.optimizer_scheduler", "lr_scheduler_type": "cosine_with_min_lr", "max_train_steps": 2, "model": {"items": {"device": "cpu", "dtype": "torch.bfloat16", "total_params": 4503438855, "type": "Qwenvl_OFT"}, "keys": ["type", "device", "dtype", "total_params", "trainable_params"], "len": 5, "type": "dict"}, "num_warmup_steps": 5000, "optimizer": {"items": {"groups": {"items": [{"items": {"lr": 0.0, "name": "action_model", "num_param_tensors": 16, "weight_decay": 1e-08}, "keys": ["name", "lr", "weight_decay", "num_param_tensors", "num_params", "trainable_params"], "len": 6, "type": "dict"}], "len": 1, "type": "list"}, "type": "AdamW"}, "keys": ["type", "groups"], "len": 2, "type": "dict"}, "pid": 2215, "rank": 0, "ts": "2026-04-21 02:25:17"}
+[STARVLA_TRACE] {"accelerator_state": "Distributed environment: DEEPSPEED  Backend: nccl\nNum processes: 1\nProcess index: 0\nLocal process index: 0\nDevice: cuda:0\n\nMixed precision type: bf16\nds_config: {'fp16': {'enabled': False}, 'bf16': {'enabled': True}, 'train_micro_batch_size_per_gpu': 'auto', 'train_batch_size': 'auto', 'gradient_accumulation_steps': 1,...<truncated 287 chars>", "gradient_accumulation_steps": 1, "label": "train.prepare_training.start", "pid": 2215, "rank": 0, "seed": 42, "total_batch_size": 1, "ts": "2026-04-21 02:25:17", "world_size": 1}
+📦 loading checkpoint: /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/checkpoints/steps_50000_pytorch_model.pt
+✅ loaded <full_model> model parameters
+04/21 [02:25:52] INFO     | >> Loaded pretrained            train_starvla.py:324
+                          checkpoint:                                           
+                          /root/autodl-tmp/starvla-official                     
+                          -qwen3vl-20260411/checkpoints/Qwe                     
+                          n3-VL-OFT-LIBERO-4in1/checkpoints                     
+                          /steps_50000_pytorch_model.pt,                        
+                          steps: 0                                              
+[STARVLA_TRACE] {"completed_steps": 0, "label": "train.checkpoint.pretrained_loaded", "pid": 2215, "pretrained_checkpoint": "/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/checkpoints/steps_50000_pytorch_model.pt", "rank": 0, "reload_modules": null, "ts": "2026-04-21 02:25:52"}
+##############################
+qwen_vl_interface
+🔒 Frozen modules with re pattern: ['qwen_vl_interface']
+📊 model parameter statistics:
+# Parameters (in millions): 4503.439 Total, 65.623 Trainable
+[STARVLA_TRACE] {"completed_steps": 0, "freeze_modules": "qwen_vl_interface", "label": "train.prepare_training.after_freeze", "model": {"items": {"device": "cpu", "dtype": "torch.bfloat16", "total_params": 4503438855, "type": "Qwenvl_OFT"}, "keys": ["type", "device", "dtype", "total_params", "trainable_params"], "len": 5, "type": "dict"}, "pid": 2215, "rank": 0, "resume_from_checkpoint": "/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/checkpoints/steps_50000_pytorch_model.pt", "ts": "2026-04-21 02:25:52"}
+[2026-04-21 02:25:52,123] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed info: version=0.16.9, git-hash=unknown, git-branch=unknown
+[2026-04-21 02:25:52,123] [INFO] [config.py:735:__init__] Config mesh_device None world_size = 1
+[2026-04-21 02:25:52,124] [WARNING] [config_utils.py:70:_process_deprecated_field] Config parameter cpu_offload is deprecated use offload_optimizer instead
+[2026-04-21 02:25:56,646] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2026-04-21 02:25:56,648] [INFO] [logging.py:107:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[2026-04-21 02:25:56,648] [INFO] [logging.py:107:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[2026-04-21 02:25:56,651] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed Basic Optimizer = AdamW
+[2026-04-21 02:25:56,651] [INFO] [utils.py:59:is_zero_supported_optimizer] Checking ZeRO support for optimizer=AdamW type=<class 'torch.optim.adamw.AdamW'>
+[2026-04-21 02:25:56,651] [INFO] [logging.py:107:log_dist] [Rank 0] Creating torch.bfloat16 ZeRO stage 2 optimizer
+[2026-04-21 02:25:56,651] [INFO] [stage_1_and_2.py:150:__init__] Reduce bucket size 500000000
+[2026-04-21 02:25:56,651] [INFO] [stage_1_and_2.py:151:__init__] Allgather bucket size 500000000
+[2026-04-21 02:25:56,651] [INFO] [stage_1_and_2.py:152:__init__] CPU Offload: False
+[2026-04-21 02:25:56,651] [INFO] [stage_1_and_2.py:153:__init__] Round robin gradient partitioning: False
+[2026-04-21 02:25:57,091] [INFO] [utils.py:781:see_memory_usage] Before initializing optimizer states
+[2026-04-21 02:25:57,092] [INFO] [utils.py:782:see_memory_usage] MA 8.69 GB         Max_MA 8.81 GB         CA 8.85 GB         Max_CA 9 GB 
+[2026-04-21 02:25:57,092] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 83.13 GB, percent = 8.3%
+[2026-04-21 02:25:57,274] [INFO] [utils.py:781:see_memory_usage] After initializing optimizer states
+[2026-04-21 02:25:57,275] [INFO] [utils.py:782:see_memory_usage] MA 8.69 GB         Max_MA 8.93 GB         CA 9.09 GB         Max_CA 9 GB 
+[2026-04-21 02:25:57,275] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 83.5 GB, percent = 8.3%
+[2026-04-21 02:25:57,275] [INFO] [stage_1_and_2.py:557:__init__] optimizer state initialized
+[2026-04-21 02:25:57,477] [INFO] [utils.py:781:see_memory_usage] After initializing ZeRO optimizer
+[2026-04-21 02:25:57,477] [INFO] [utils.py:782:see_memory_usage] MA 8.69 GB         Max_MA 8.69 GB         CA 9.09 GB         Max_CA 9 GB 
+[2026-04-21 02:25:57,478] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 83.29 GB, percent = 8.3%
+[2026-04-21 02:25:57,478] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed Final Optimizer = DeepSpeedZeroOptimizer
+[2026-04-21 02:25:57,478] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed using configured LR scheduler = None
+[2026-04-21 02:25:57,478] [INFO] [logging.py:107:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+[2026-04-21 02:25:57,478] [INFO] [logging.py:107:log_dist] [Rank 0] step=0, skipped=0, lr=[0.0], mom=[(0.9, 0.95)]
+[2026-04-21 02:25:57,480] [INFO] [config.py:1003:print] DeepSpeedEngine configuration:
+[2026-04-21 02:25:57,480] [INFO] [config.py:1007:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2026-04-21 02:25:57,480] [INFO] [config.py:1007:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'intra_op_parallelism': 1, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[2026-04-21 02:25:57,480] [INFO] [config.py:1007:print]   amp_enabled .................. False
+[2026-04-21 02:25:57,480] [INFO] [config.py:1007:print]   amp_params ................... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   bfloat16_enabled ............. True
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   bfloat16_immediate_grad_update  True
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   checkpoint_parallel_write_pipeline  False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   checkpoint_tag_validation_enabled  True
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   checkpoint_tag_validation_fail  False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7fefdc557940>
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   communication_data_type ...... None
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   compile_config ............... deepcompile=False free_activation=False offload_activation=False offload_opt_states=False double_buffer=True symmetric_memory=False debug_log=False offload_parameters=False sync_before_reduce=False sync_after_reduce=False sync_before_allgather=False sync_after_allgather=False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   curriculum_enabled_legacy .... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   curriculum_params_legacy ..... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'pin_memory': False, 'curriculum_learning': {'enabled': False}, 'dynamic_batching': {'enabled': False, 'lr_scaling_method': 'linear', 'min_batch_size': 1, 'max_batch_size': None, 'sequence_picking_order': 'dataloader', 'verbose': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   data_efficiency_enabled ...... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   dataloader_drop_last ......... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   disable_allgather ............ False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   dump_state ................... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   dynamic_loss_scale_args ...... None
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_enabled ........... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_gas_boundary_resolution  1
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_layer_num ......... 0
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_max_iter .......... 100
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_stability ......... 1e-06
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_tol ............... 0.01
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   eigenvalue_verbose ........... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   elasticity_enabled ........... False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   fp16_auto_cast ............... None
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   fp16_enabled ................. False
+[2026-04-21 02:25:57,481] [INFO] [config.py:1007:print]   fp16_master_weights_and_gradients  False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   global_rank .................. 0
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   grad_accum_dtype ............. None
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   gradient_accumulation_steps .. 1
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   gradient_clipping ............ 1.0
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   gradient_predivide_factor .... 1.0
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   graph_harvesting ............. False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   initial_dynamic_scale ........ 1
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   load_universal_checkpoint .... False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   loss_scale ................... 1.0
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   memory_breakdown ............. False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   mics_hierarchial_params_gather  False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   mics_shard_size .............. -1
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   optimizer_legacy_fusion ...... False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   optimizer_name ............... None
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   optimizer_params ............. None
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   pld_enabled .................. False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   pld_params ................... False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   prescale_gradients ........... False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   scheduler_name ............... None
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   scheduler_params ............. None
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   seq_parallel_communication_data_type  torch.float32
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   sparse_attention ............. None
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   sparse_gradients_enabled ..... False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   steps_per_print .............. inf
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   tensor_parallel_config ....... dtype=torch.float16 autotp_size=0 tp_overlap_comm=False tensor_parallel=TPConfig(tp_size=1, tp_grain_size=1, mpu=None, tp_group=None) injection_policy_tuple=None keep_module_on_host=False replace_with_kernel_inject=False
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   timers_config ................ enabled=True synchronized=True
+[2026-04-21 02:25:57,482] [INFO] [config.py:1007:print]   train_batch_size ............. 1
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   train_micro_batch_size_per_gpu  1
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   use_data_before_expert_parallel_  False
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   use_node_local_storage ....... False
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   wall_clock_breakdown ......... False
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   weight_quantization_config ... None
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   world_size ................... 1
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   zero_allow_untested_optimizer  True
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   zero_config .................. stage=2 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=True load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None prefetch_bucket_size=50000000 param_persistence_threshold=100000 model_persistence_threshold=9223372036854775807 max_live_parameters=1000000000 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False module_granularity_threshold=0 use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False zeropp_loco_param=None mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True log_trace_cache_warnings=False
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   zero_enabled ................. True
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   zero_force_ds_cpu_optimizer .. True
+[2026-04-21 02:25:57,483] [INFO] [config.py:1007:print]   zero_optimization_stage ...... 2
+[2026-04-21 02:25:57,483] [INFO] [config.py:993:print_user_config]   json = {
+    "fp16": {
+        "enabled": false
+    }, 
+    "bf16": {
+        "enabled": true
+    }, 
+    "train_micro_batch_size_per_gpu": 1, 
+    "train_batch_size": 1, 
+    "gradient_accumulation_steps": 1, 
+    "zero_optimization": {
+        "stage": 2, 
+        "allgather_partitions": true, 
+        "allgather_bucket_size": 5.000000e+08, 
+        "reduce_scatter": true, 
+        "reduce_bucket_size": 5.000000e+08, 
+        "overlap_comm": true, 
+        "contiguous_gradients": true, 
+        "cpu_offload": false
+    }, 
+    "gradient_clipping": 1.0, 
+    "steps_per_print": inf, 
+    "zero_allow_untested_optimizer": true
+}
+[STARVLA_TRACE] {"dataloader": {"items": {"dataloader_len": 52042, "dataset_len": 52042, "dataset_type": "LeRobotMixtureDataset", "type": "DataLoaderShard"}, "keys": ["type", "dataset_type", "dataset_len", "dataloader_len", "batch_size", "num_workers", "collate_fn"], "len": 7, "type": "dict"}, "label": "train.prepare_training.after_accelerate_prepare", "model": {"items": {"device": "cuda:0", "dtype": "torch.bfloat16", "total_params": 4503438855, "type": "DeepSpeedEngine"}, "keys": ["type", "device", "dtype", "total_params", "trainable_params"], "len": 5, "type": "dict"}, "optimizer": {"items": {"groups": {"items": [{"items": {"lr": 0.0, "name": "action_model", "num_param_tensors": 1, "weight_decay": 1e-08}, "keys": ["name", "lr", "weight_decay", "num_param_tensors", "num_params", "trainable_params"], "len": 6, "type": "dict"}], "len": 1, "type": "list"}, "type": "DeepSpeedOptimizerWrapper"}, "keys": ["type", "groups"], "len": 2, "type": "dict"}, "pid": 2215, "rank": 0, "ts": "2026-04-21 02:25:57"}
+04/21 [02:25:57] INFO     | >> ***** Training Configuration train_starvla.py:517
+                          *****                                                 
+                 INFO     | >>   Total optimization steps = train_starvla.py:518
+                          2                                                     
+                 INFO     | >>   Per device batch size = 1  train_starvla.py:519
+                 INFO     | >>   Gradient accumulation      train_starvla.py:520
+                          steps = 1                                             
+                 INFO     | >>   Total batch size = 1       train_starvla.py:521
+[STARVLA_TRACE] {"completed_steps": 0, "dataloader": {"items": {"dataloader_len": 52042, "dataset_len": 52042, "dataset_type": "LeRobotMixtureDataset", "type": "DataLoaderShard"}, "keys": ["type", "dataset_type", "dataset_len", "dataloader_len", "batch_size", "num_workers", "collate_fn"], "len": 7, "type": "dict"}, "eval_interval": 1000, "label": "train.loop.start", "logging_frequency": 1, "max_train_steps": 2, "pid": 2215, "rank": 0, "save_interval": 1000, "total_batch_size": 1, "ts": "2026-04-21 02:25:57"}
+  0%|          | 0/2 [00:00<?, ?it/s][STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 2, "pid": 2740, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.2230939120054245, "min": -0.31591796875, "numel": 56, "sample": [0.95166015625, 0.0171356201171875, 0.0, -0.308837890625], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "push the plate to the front of the stove", "language": "push the plate to the front of the stove"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 5, "trajectory_id": 82, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:57"}[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 1, "pid": 2739, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.09978171437978745, "min": -0.3125, "numel": 56, "sample": [0.0, 0.028564453125, 0.59130859375, -0.3125], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the wine bottle on the rack", "language": "put the wine bottle on the rack"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 77, "trajectory_id": 244, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:57"}
+
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 3, "pid": 2741, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 0.262939453125, "mean": -0.06385530531406403, "min": -0.362548828125, "numel": 56, "sample": [0.262939453125, 0.0, 0.0, -0.2076416015625], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the bowl on the stove", "language": "put the bowl on the stove"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 42, "trajectory_id": 233, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 0, "pid": 2738, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.08116034418344498, "min": -0.623046875, "numel": 56, "sample": [0.81982421875, -0.3828125, 0.56591796875, -0.07855224609375], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the bowl on the plate", "language": "put the bowl on the plate"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 59, "trajectory_id": 43, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"batch": {"items": [{"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.08116034418344498, "min": -0.623046875, "numel": 56, "sample": [0.81982421875, -0.3828125, 0.56591796875, -0.07855224609375], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the bowl on the plate", "language": "put the bowl on the plate"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}], "len": 1, "type": "list"}, "batch_size": 1, "label": "train.batch", "pid": 2215, "rank": 0, "step": 0, "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"batch": {"items": [{"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.08116034418344498, "min": -0.623046875, "numel": 56, "sample": [0.81982421875, -0.3828125, 0.56591796875, -0.07855224609375], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the bowl on the plate", "language": "put the bowl on the plate"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}], "len": 1, "type": "list"}, "label": "train.train_step.input", "pid": 2215, "rank": 0, "step": 0, "sync_gradients": true, "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"label": "train.train_step.zero_grad", "pid": 2215, "rank": 0, "step": 0, "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"actions": {"items": [{"dtype": "float16", "max": 1.0, "mean": 0.08116034418344498, "min": -0.623046875, "numel": 56, "sample": [0.81982421875, -0.3828125, 0.56591796875, -0.07855224609375], "shape": [8, 7], "type": "np.ndarray"}], "len": 1, "type": "list"}, "batch_images": {"items": [{"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}], "len": 1, "type": "list"}, "batch_size": 1, "instructions": {"items": ["put the bowl on the plate"], "len": 1, "type": "list"}, "label": "qwen_oft.forward.input", "pid": 2215, "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"action_token": "🔍", "action_token_id": 146663, "chunk_len": 8, "instructions": {"items": ["put the bowl on the plate Please predict the next 8 robot actions: <action>🔍🔍🔍🔍🔍🔍🔍🔍<action>."], "len": 1, "type": "list"}, "label": "qwen_oft.forward.prompt", "pid": 2215, "prompt_suffix": " Please predict the next 8 robot actions: <action>🔍🔍🔍🔍🔍🔍🔍🔍<action>.", "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 7, "pid": 2741, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": -0.0561806820333004, "min": -0.5458984375, "numel": 56, "sample": [-0.034271240234375, 0.0, -0.5458984375, -0.22509765625], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the bowl on the stove", "language": "put the bowl on the stove"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 38, "trajectory_id": 250, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:58"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 6, "pid": 2740, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.030375344678759575, "min": -0.77978515625, "numel": 56, "sample": [-0.274169921875, 0.0, -0.7626953125, -0.2425537109375], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "push the plate to the front of the stove", "language": "push the plate to the front of the stove"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 46, "trajectory_id": 284, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:58"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 4, "pid": 2738, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": -0.04141753166913986, "min": -0.354248046875, "numel": 56, "sample": [0.04571533203125, -0.199951171875, -0.29150390625, -0.1588134765625], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the wine bottle on the rack", "language": "put the wine bottle on the rack"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 67, "trajectory_id": 378, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:58"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 5, "pid": 2739, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.3092786371707916, "min": -0.265625, "numel": 56, "sample": [0.89404296875, 0.6513671875, 0.0, -0.1588134765625], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the cream cheese in the bowl", "language": "put the cream cheese in the bowl"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 14, "trajectory_id": 319, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:58"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 8, "pid": 2738, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.14048168063163757, "min": -0.29443359375, "numel": 56, "sample": [0.09429931640625, 0.0, 0.25146484375, -0.1588134765625], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the cream cheese in the bowl", "language": "put the cream cheese in the bowl"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 88, "trajectory_id": 208, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:58"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 9, "pid": 2739, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.10717719048261642, "min": -0.44580078125, "numel": 56, "sample": [0.11712646484375, -0.44580078125, -0.32275390625, 0.07855224609375], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the wine bottle on top of the cabinet", "language": "put the wine bottle on top of the cabinet"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 94, "trajectory_id": 133, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:58"}
+[STARVLA_TRACE] {"label": "qwen_oft.forward.qwen_inputs", "pid": 2215, "qwen_inputs": "{'input_ids': tensor([[151644,    872,    198, 151652, 151655, 151655, 151655, 151655, 151655,\n         151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655,\n         151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655,\n         151655, 151655, 151655, 151655, 151655, 151655, 151655...<truncated 2784 chars>", "ts": "2026-04-21 02:25:57"}
+[STARVLA_TRACE] {"hidden_state_count": 37, "label": "qwen_oft.forward.qwenvl_outputs", "last_hidden": {"device": "cuda:0", "dtype": "torch.bfloat16", "numel": 509440, "requires_grad": false, "sample": [2848.0, -29.5, 5.0, 83.0], "shape": [1, 199, 2560], "type": "torch.Tensor"}, "pid": 2215, "ts": "2026-04-21 02:25:58"}
+[STARVLA_TRACE] {"action_queries": {"device": "cuda:0", "dtype": "torch.bfloat16", "max": 1848.0, "mean": 1.0831444263458252, "min": -62.5, "numel": 20480, "requires_grad": false, "sample": [1544.0, -19.125, -4.125, 7.3125], "shape": [1, 8, 2560], "type": "torch.Tensor"}, "input_ids": {"device": "cuda:0", "dtype": "torch.int64", "max": 151655.0, "mean": 110583.1171875, "min": 13.0, "numel": 199, "requires_grad": false, "sample": [151644.0, 872.0, 198.0, 151652.0], "shape": [1, 199], "type": "torch.Tensor"}, "label": "qwen_oft.forward.action_queries", "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_dim": 7, "actions_hidden_states": {"device": "cuda:0", "dtype": "torch.bfloat16", "max": 1848.0, "mean": 1.0831444263458252, "min": -62.5, "numel": 20480, "requires_grad": false, "sample": [1544.0, -19.125, -4.125, 7.3125], "shape": [1, 8, 2560], "type": "torch.Tensor"}, "label": "action_head.l1.input", "num_actions_chunk": 8, "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"actions": {"device": "cuda:0", "dtype": "torch.float32", "max": 1.0068494081497192, "mean": 0.10244335979223251, "min": -0.590691864490509, "numel": 56, "requires_grad": true, "sample": [0.8191843032836914, -0.36658018827438354, 0.5887564420700073, -0.06524868309497833], "shape": [1, 8, 7], "type": "torch.Tensor"}, "label": "action_head.l1.output", "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "qwen_oft.forward.pred_actions", "pid": 2215, "pred_actions": {"device": "cuda:0", "dtype": "torch.float32", "max": 1.0068494081497192, "mean": 0.10244335979223251, "min": -0.590691864490509, "numel": 56, "requires_grad": true, "sample": [0.8191843032836914, -0.36658018827438354, 0.5887564420700073, -0.06524868309497833], "shape": [1, 8, 7], "type": "torch.Tensor"}, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.026219910010695457, "mean": 0.026219910010695457, "min": 0.026219910010695457, "numel": 1, "requires_grad": true, "sample": [0.026219910010695457], "shape": [], "type": "torch.Tensor"}, "actions_target": {"device": "cuda:0", "dtype": "torch.float32", "max": 1.0, "mean": 0.08116034418344498, "min": -0.623046875, "numel": 56, "requires_grad": false, "sample": [0.81982421875, -0.3828125, 0.56591796875, -0.07855224609375], "shape": [1, 8, 7], "type": "torch.Tensor"}, "label": "qwen_oft.forward.loss", "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.026219910010695457, "mean": 0.026219910010695457, "min": 0.026219910010695457, "numel": 1, "requires_grad": true, "sample": [0.026219910010695457], "shape": [], "type": "torch.Tensor"}, "label": "train.train_step.forward_output", "output_dict": {"items": {"action_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.026219910010695457, "mean": 0.026219910010695457, "min": 0.026219910010695457, "numel": 1, "requires_grad": true, "sample": [0.026219910010695457], "shape": [], "type": "torch.Tensor"}}, "keys": ["action_loss"], "len": 1, "type": "dict"}, "pid": 2215, "rank": 0, "step": 0, "total_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.026219910010695457, "mean": 0.026219910010695457, "min": 0.026219910010695457, "numel": 1, "requires_grad": true, "sample": [0.026219910010695457], "shape": [], "type": "torch.Tensor"}, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "train.train_step.backward_done", "pid": 2215, "rank": 0, "step": 0, "total_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.026219910010695457, "mean": 0.026219910010695457, "min": 0.026219910010695457, "numel": 1, "requires_grad": true, "sample": [0.026219910010695457], "shape": [], "type": "torch.Tensor"}, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"gradient_clipping": 1.0, "label": "train.train_step.grad_clip", "pid": 2215, "rank": 0, "step": 0, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "train.train_step.optimizer_step", "lr": {"items": [0.0], "len": 1, "type": "list"}, "pid": 2215, "rank": 0, "step": 0, "sync_gradients": true, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "train.train_step.scheduler_step", "lr": {"items": [2e-08], "len": 1, "type": "list"}, "pid": 2215, "rank": 0, "step": 0, "ts": "2026-04-21 02:25:59"}
+ 50%|█████     | 1/2 [00:01<00:01,  1.63s/it] 50%|█████     | 1/2 [00:01<00:01,  1.63s/it, data_times=0.280, model_times=1.346][STARVLA_TRACE] {"data_time": 0.280186761636287, "label": "train.step.timing", "lr": {"items": [2e-08], "len": 1, "type": "list"}, "metrics": {"items": {"action_dit_loss": 0.026219910010695457, "data_time": 0.280186761636287, "model_time": 1.3458614107221365}, "keys": ["action_dit_loss", "data_time", "model_time"], "len": 3, "type": "dict"}, "model_time": 1.3458614107221365, "pid": 2215, "rank": 0, "step": 1, "sync_gradients": true, "ts": "2026-04-21 02:25:59"}
+04/21 [02:25:59] INFO     | >> Step 1, Loss:                train_starvla.py:398
+                          {'action_dit_loss':                                   
+                          0.026219910010695457,                                 
+                          'data_time': 0.280186761636287,                       
+                          'model_time': 1.3458614107221365,                     
+                          'learning_rate': 2e-08, 'epoch':                      
+                          0.0})                                                 
+[STARVLA_TRACE] {"label": "train.metrics", "metrics": {"items": {"action_dit_loss": 0.026219910010695457, "data_time": 0.280186761636287, "learning_rate": 2e-08, "model_time": 1.3458614107221365}, "keys": ["action_dit_loss", "data_time", "model_time", "learning_rate", "epoch"], "len": 5, "type": "dict"}, "pid": 2215, "rank": 0, "step": 1, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"batch": {"items": [{"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.09978171437978745, "min": -0.3125, "numel": 56, "sample": [0.0, 0.028564453125, 0.59130859375, -0.3125], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the wine bottle on the rack", "language": "put the wine bottle on the rack"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}], "len": 1, "type": "list"}, "batch_size": 1, "label": "train.batch", "pid": 2215, "rank": 0, "step": 1, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"batch": {"items": [{"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.09978171437978745, "min": -0.3125, "numel": 56, "sample": [0.0, 0.028564453125, 0.59130859375, -0.3125], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the wine bottle on the rack", "language": "put the wine bottle on the rack"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}], "len": 1, "type": "list"}, "label": "train.train_step.input", "pid": 2215, "rank": 0, "step": 1, "sync_gradients": true, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "train.train_step.zero_grad", "pid": 2215, "rank": 0, "step": 1, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"actions": {"items": [{"dtype": "float16", "max": 1.0, "mean": 0.09978171437978745, "min": -0.3125, "numel": 56, "sample": [0.0, 0.028564453125, 0.59130859375, -0.3125], "shape": [8, 7], "type": "np.ndarray"}], "len": 1, "type": "list"}, "batch_images": {"items": [{"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}], "len": 1, "type": "list"}, "batch_size": 1, "instructions": {"items": ["put the wine bottle on the rack"], "len": 1, "type": "list"}, "label": "qwen_oft.forward.input", "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_token": "🔍", "action_token_id": 146663, "chunk_len": 8, "instructions": {"items": ["put the wine bottle on the rack Please predict the next 8 robot actions: <action>🔍🔍🔍🔍🔍🔍🔍🔍<action>."], "len": 1, "type": "list"}, "label": "qwen_oft.forward.prompt", "pid": 2215, "prompt_suffix": " Please predict the next 8 robot actions: <action>🔍🔍🔍🔍🔍🔍🔍🔍<action>.", "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "qwen_oft.forward.qwen_inputs", "pid": 2215, "qwen_inputs": "{'input_ids': tensor([[151644,    872,    198, 151652, 151655, 151655, 151655, 151655, 151655,\n         151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655,\n         151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655,\n         151655, 151655, 151655, 151655, 151655, 151655, 151655...<truncated 2795 chars>", "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"attempt": 0, "dataset_name": "libero_goal_no_noops_1.0.0_lerobot", "label": "dataset.mixture.item", "mixture_index": 10, "pid": 2740, "raw_data_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "sample": {"items": {"action": {"dtype": "float16", "max": 1.0, "mean": 0.09348099678754807, "min": -0.48291015625, "numel": 56, "sample": [0.0, -0.36572265625, 1.0, -0.1588134765625], "shape": [8, 7], "type": "np.ndarray"}, "image": {"items": [{"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}, {"mode": "RGB", "size": [224, 224], "type": "PIL.Image"}], "len": 2, "type": "list"}, "lang": "put the bowl on top of the cabinet", "language": "put the bowl on top of the cabinet"}, "keys": ["action", "image", "lang", "language", "robot_tag"], "len": 5, "type": "dict"}, "sample_tries": 1, "step": 49, "trajectory_id": 218, "transformed_keys": {"items": ["video.primary_image", "video.wrist_image", "state.x", "state.y"], "len": 18, "type": "list"}, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"hidden_state_count": 37, "label": "qwen_oft.forward.qwenvl_outputs", "last_hidden": {"device": "cuda:0", "dtype": "torch.bfloat16", "numel": 512000, "requires_grad": false, "sample": [2848.0, -29.5, 5.0, 83.0], "shape": [1, 200, 2560], "type": "torch.Tensor"}, "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_queries": {"device": "cuda:0", "dtype": "torch.bfloat16", "max": 2448.0, "mean": 1.6007088422775269, "min": -71.5, "numel": 20480, "requires_grad": false, "sample": [2024.0, -13.75, 13.5, 5.8125], "shape": [1, 8, 2560], "type": "torch.Tensor"}, "input_ids": {"device": "cuda:0", "dtype": "torch.int64", "max": 151655.0, "mean": 110170.4140625, "min": 13.0, "numel": 200, "requires_grad": false, "sample": [151644.0, 872.0, 198.0, 151652.0], "shape": [1, 200], "type": "torch.Tensor"}, "label": "qwen_oft.forward.action_queries", "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_dim": 7, "actions_hidden_states": {"device": "cuda:0", "dtype": "torch.bfloat16", "max": 2448.0, "mean": 1.6007088422775269, "min": -71.5, "numel": 20480, "requires_grad": false, "sample": [2024.0, -13.75, 13.5, 5.8125], "shape": [1, 8, 2560], "type": "torch.Tensor"}, "label": "action_head.l1.input", "num_actions_chunk": 8, "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"actions": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.997263491153717, "mean": 0.11852820217609406, "min": -0.28929972648620605, "numel": 56, "requires_grad": true, "sample": [-0.0036504631862044334, 0.03134563937783241, 0.6454325318336487, -0.28929972648620605], "shape": [1, 8, 7], "type": "torch.Tensor"}, "label": "action_head.l1.output", "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "qwen_oft.forward.pred_actions", "pid": 2215, "pred_actions": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.997263491153717, "mean": 0.11852820217609406, "min": -0.28929972648620605, "numel": 56, "requires_grad": true, "sample": [-0.0036504631862044334, 0.03134563937783241, 0.6454325318336487, -0.28929972648620605], "shape": [1, 8, 7], "type": "torch.Tensor"}, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.025770975276827812, "mean": 0.025770975276827812, "min": 0.025770975276827812, "numel": 1, "requires_grad": true, "sample": [0.025770975276827812], "shape": [], "type": "torch.Tensor"}, "actions_target": {"device": "cuda:0", "dtype": "torch.float32", "max": 1.0, "mean": 0.09978172183036804, "min": -0.3125, "numel": 56, "requires_grad": false, "sample": [0.0, 0.028564453125, 0.59130859375, -0.3125], "shape": [1, 8, 7], "type": "torch.Tensor"}, "label": "qwen_oft.forward.loss", "pid": 2215, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"action_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.025770975276827812, "mean": 0.025770975276827812, "min": 0.025770975276827812, "numel": 1, "requires_grad": true, "sample": [0.025770975276827812], "shape": [], "type": "torch.Tensor"}, "label": "train.train_step.forward_output", "output_dict": {"items": {"action_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.025770975276827812, "mean": 0.025770975276827812, "min": 0.025770975276827812, "numel": 1, "requires_grad": true, "sample": [0.025770975276827812], "shape": [], "type": "torch.Tensor"}}, "keys": ["action_loss"], "len": 1, "type": "dict"}, "pid": 2215, "rank": 0, "step": 1, "total_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.025770975276827812, "mean": 0.025770975276827812, "min": 0.025770975276827812, "numel": 1, "requires_grad": true, "sample": [0.025770975276827812], "shape": [], "type": "torch.Tensor"}, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "train.train_step.backward_done", "pid": 2215, "rank": 0, "step": 1, "total_loss": {"device": "cuda:0", "dtype": "torch.float32", "max": 0.025770975276827812, "mean": 0.025770975276827812, "min": 0.025770975276827812, "numel": 1, "requires_grad": true, "sample": [0.025770975276827812], "shape": [], "type": "torch.Tensor"}, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"gradient_clipping": 1.0, "label": "train.train_step.grad_clip", "pid": 2215, "rank": 0, "step": 1, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "train.train_step.optimizer_step", "lr": {"items": [2e-08], "len": 1, "type": "list"}, "pid": 2215, "rank": 0, "step": 1, "sync_gradients": true, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"label": "train.train_step.scheduler_step", "lr": {"items": [4e-08], "len": 1, "type": "list"}, "pid": 2215, "rank": 0, "step": 1, "ts": "2026-04-21 02:25:59"}
+100%|██████████| 2/2 [00:02<00:00,  1.11it/s, data_times=0.280, model_times=1.346]100%|██████████| 2/2 [00:02<00:00,  1.11it/s, data_times=0.001, model_times=0.388][STARVLA_TRACE] {"data_time": 0.0009273337200284004, "label": "train.step.timing", "lr": {"items": [4e-08], "len": 1, "type": "list"}, "metrics": {"items": {"action_dit_loss": 0.025770975276827812, "data_time": 0.0009273337200284004, "model_time": 0.3884146851487458}, "keys": ["action_dit_loss", "data_time", "model_time"], "len": 3, "type": "dict"}, "model_time": 0.3884146851487458, "pid": 2215, "rank": 0, "step": 2, "sync_gradients": true, "ts": "2026-04-21 02:25:59"}
+                 INFO     | >> Step 2, Loss:                train_starvla.py:398
+                          {'action_dit_loss':                                   
+                          0.025770975276827812,                                 
+                          'data_time':                                          
+                          0.0009273337200284004,                                
+                          'model_time': 0.3884146851487458,                     
+                          'learning_rate': 4e-08, 'epoch':                      
+                          0.0})                                                 
+[STARVLA_TRACE] {"label": "train.metrics", "metrics": {"items": {"action_dit_loss": 0.025770975276827812, "data_time": 0.0009273337200284004, "learning_rate": 4e-08, "model_time": 0.3884146851487458}, "keys": ["action_dit_loss", "data_time", "model_time", "learning_rate", "epoch"], "len": 5, "type": "dict"}, "pid": 2215, "rank": 0, "step": 2, "ts": "2026-04-21 02:25:59"}
+[STARVLA_TRACE] {"completed_steps": 2, "label": "train.finalize.skip_save", "pid": 2215, "rank": 0, "reason": "trainer.skip_final_save", "ts": "2026-04-21 02:25:59"}
+100%|██████████| 2/2 [00:02<00:00,  1.01s/it, data_times=0.001, model_times=0.388]
+                 INFO     | >> ... and that's all, folks!   train_starvla.py:667
