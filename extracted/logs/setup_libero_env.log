@@ -1,0 +1,298 @@
+[START] 2026-04-11T05:43:07+08:00 clone starvla env -> libero env
+Source:      /root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/starvla
+Destination: /root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero
+Packages: 34
+Files: 54320
+
+Downloading and Extracting Packages: ...working... done
+
+Downloading and Extracting Packages: ...working... done
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate /root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+[ENV] /root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/bin/python
+Python 3.10.20
+[PIP] installing LIBERO simulation deps
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Collecting numpy==1.24.4
+  Downloading http://mirrors.aliyun.com/pypi/packages/10/be/ae5bf4737cb79ba437879915791f6f26d92583c738d7d960ad94e5c36adf/numpy-1.24.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (17.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 17.3/17.3 MB 36.4 MB/s  0:00:00
+Collecting robosuite==1.4.0
+  Downloading http://mirrors.aliyun.com/pypi/packages/2e/08/fe231064caaf2766d47818ca12fd8acf10dc4e762a33dabc6293e83bfead/robosuite-1.4.0-py3-none-any.whl (193.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.5/193.5 MB 24.7 MB/s  0:00:07
+Collecting bddl==1.0.1
+  Downloading http://mirrors.aliyun.com/pypi/packages/5c/37/0211f82891a9f14efcfd2b2096f8d9e4351398ad637fdd1ee59cfc580b0e/bddl-1.0.1.tar.gz (164 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting robomimic==0.2.0
+  Downloading http://mirrors.aliyun.com/pypi/packages/3d/c3/44b1d1ea4bcb4bbed43d19e09505f4142714451ded74020d4f679cdc89fb/robomimic-0.2.0.tar.gz (192 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting hydra-core==1.2.0
+  Downloading http://mirrors.aliyun.com/pypi/packages/68/0d/0da98325011cb09e1f6439f0adcc98a0f5261d3578bf182438562096913e/hydra_core-1.2.0-py3-none-any.whl (151 kB)
+Collecting easydict==1.9
+  Downloading http://mirrors.aliyun.com/pypi/packages/4c/c5/5757886c4f538c1b3f95f6745499a24bffa389a805dee92d093e2d9ba7db/easydict-1.9.tar.gz (6.4 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting gym==0.25.2
+  Downloading http://mirrors.aliyun.com/pypi/packages/1c/5c/e5c14f3474e91038a51ec794350c7af9635a2faf3873c85989bf9dd127ce/gym-0.25.2.tar.gz (734 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 734.5/734.5 kB 128.8 MB/s  0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting cloudpickle==2.1.0
+  Downloading http://mirrors.aliyun.com/pypi/packages/25/40/2c9db9cfb85a8a21c61528f6660c47662b3e59576efac610d8268d47abba/cloudpickle-2.1.0-py3-none-any.whl (25 kB)
+Collecting future==0.18.2
+  Downloading http://mirrors.aliyun.com/pypi/packages/45/0b/38b06fd9b92dc2b68d58b75f900e97884c45bedd2ff83203d933cf5851c9/future-0.18.2.tar.gz (829 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 829.2/829.2 kB 126.9 MB/s  0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting einops==0.4.1
+  Downloading http://mirrors.aliyun.com/pypi/packages/df/bf/18c6c753fe699c44e3d6013d75074e15f139f9a9adbaeb108f61d73d18d1/einops-0.4.1-py3-none-any.whl (28 kB)
+Collecting thop==0.1.1-2209072238
+  Downloading http://mirrors.aliyun.com/pypi/packages/bb/0f/72beeab4ff5221dc47127c80f8834b4bcd0cb36f6ba91c0b1d04a1233403/thop-0.1.1.post2209072238-py3-none-any.whl (15 kB)
+Collecting mediapy
+  Downloading http://mirrors.aliyun.com/pypi/packages/37/8c/52f0299f1675cdfa1ab39a6028a2e5adf9032ae1118c9895c84b08af162b/mediapy-1.2.6-py3-none-any.whl (27 kB)
+Collecting msgpack-numpy
+  Downloading http://mirrors.aliyun.com/pypi/packages/9b/5d/f25ac7d4fb77cbd53ddc6d05d833c6bf52b12770a44fa9a447eed470ca9a/msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
+Collecting opencv-python==4.6.0.66
+  Downloading http://mirrors.aliyun.com/pypi/packages/af/bf/8d189a5c43460f6b5c8eb81ead8732e94b9f73ef8d9abba9e8f5a61a6531/opencv_python-4.6.0.66-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.9/60.9 MB 26.7 MB/s  0:00:02
+Collecting numba>=0.49.1 (from robosuite==1.4.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/07/95/d6a2f0625e1092624228301eea11cdaff21ddcaf917ef3d631846a38b2f4/numba-0.65.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 87.9 MB/s  0:00:00
+Requirement already satisfied: scipy>=1.2.3 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robosuite==1.4.0) (1.15.3)
+Collecting mujoco>=2.3.0 (from robosuite==1.4.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/94/27/043852c6d46b9f5b092430e334b2102753f2b63b262f4f466c75c0b9daac/mujoco-3.6.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.4/7.4 MB 84.9 MB/s  0:00:00
+Requirement already satisfied: Pillow in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robosuite==1.4.0) (12.1.1)
+Collecting pytest (from bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/d4/24/a372aaf5c9b7208e7112038812994107bc65a84cd00e0354a88c2c77a617/pytest-9.0.3-py3-none-any.whl (375 kB)
+Requirement already satisfied: networkx in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from bddl==1.0.1) (3.4.2)
+Collecting jupytext (from bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/16/5a/736dd2f4535dbf3bf26523f9158c011389ef88dd06ec2eef67fd744f1c7b/jupytext-1.19.1-py3-none-any.whl (170 kB)
+Collecting h5py (from robomimic==0.2.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/cb/92/a8851d936547efe30cc0ce5245feac01f3ec6171f7899bc3f775c72030b3/h5py-3.16.0-cp310-cp310-manylinux_2_28_x86_64.whl (5.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.1/5.1 MB 91.4 MB/s  0:00:00
+Requirement already satisfied: psutil in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robomimic==0.2.0) (7.2.2)
+Requirement already satisfied: tqdm in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robomimic==0.2.0) (4.67.3)
+Requirement already satisfied: termcolor in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robomimic==0.2.0) (3.3.0)
+Requirement already satisfied: tensorboard in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robomimic==0.2.0) (2.20.0)
+Collecting tensorboardX (from robomimic==0.2.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/87/0f/69fbab4c30b2f3a76e6de67585ea72a8eccf381751f5c0046b966fde9658/tensorboardx-2.6.5-py3-none-any.whl (87 kB)
+Requirement already satisfied: imageio in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robomimic==0.2.0) (2.37.3)
+Collecting imageio-ffmpeg (from robomimic==0.2.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/a0/2d/43c8522a2038e9d0e7dbdf3a61195ecc31ca576fb1527a528c877e87d973/imageio_ffmpeg-0.6.0-py3-none-manylinux2014_x86_64.whl (29.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 29.5/29.5 MB 32.2 MB/s  0:00:00
+Collecting egl_probe>=1.0.1 (from robomimic==0.2.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/b3/c3/c5fea892e18631721a7d7e492a790bde8e3dc930861866bedb38762d0d7c/egl_probe-1.0.2.tar.gz (217 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: torch in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robomimic==0.2.0) (2.6.0)
+Requirement already satisfied: torchvision in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from robomimic==0.2.0) (0.21.0)
+Requirement already satisfied: omegaconf~=2.2 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from hydra-core==1.2.0) (2.3.0)
+Requirement already satisfied: antlr4-python3-runtime==4.9.* in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from hydra-core==1.2.0) (4.9.3)
+Requirement already satisfied: packaging in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from hydra-core==1.2.0) (26.0)
+Collecting gym_notices>=0.0.4 (from gym==0.25.2)
+  Downloading http://mirrors.aliyun.com/pypi/packages/41/55/55d157aa8693090954fc9639bf27218240517c3bc7afa6e97412da6ebfd9/gym_notices-0.1.0-py3-none-any.whl (3.3 kB)
+Requirement already satisfied: PyYAML>=5.1.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from omegaconf~=2.2->hydra-core==1.2.0) (6.0.3)
+Collecting ipython (from mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/c0/56/4cc7fc9e9e3f38fd324f24f8afe0ad8bb5fa41283f37f1aaf9de0612c968/ipython-8.39.0-py3-none-any.whl (831 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 831.8/831.8 kB 171.0 MB/s  0:00:00
+Requirement already satisfied: matplotlib in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from mediapy) (3.10.8)
+Requirement already satisfied: msgpack>=0.5.2 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from msgpack-numpy) (1.1.2)
+Requirement already satisfied: absl-py in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.0) (2.4.0)
+Collecting etils[epath] (from mujoco>=2.3.0->robosuite==1.4.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/e7/98/87b5946356095738cb90a6df7b35ff69ac5750f6e783d5fbcc5cb3b6cbd7/etils-1.13.0-py3-none-any.whl (170 kB)
+Collecting glfw (from mujoco>=2.3.0->robosuite==1.4.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/5a/3f/efeb7c6801c46e11bd666a5180f0d615f74f72264212f74f39586c6fda9d/glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.py39.py310.py311.py312.py313.py314-none-manylinux_2_28_x86_64.whl (243 kB)
+Collecting pyopengl (from mujoco>=2.3.0->robosuite==1.4.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/de/e4/1ba6f44e491c4eece978685230dde56b14d51a0365bc1b774ddaa94d14cd/pyopengl-3.1.10-py3-none-any.whl (3.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 139.9 MB/s  0:00:00
+Collecting llvmlite<0.48,>=0.47.0dev0 (from numba>=0.49.1->robosuite==1.4.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/7c/fb/76d88fc05ee1f9c1a6efe39eb493c4a727e5d1690412469017cd23bcb776/llvmlite-0.47.0-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (56.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 27.2 MB/s  0:00:02
+Requirement already satisfied: fsspec in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.0) (2026.2.0)
+Collecting importlib_resources (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.0)
+  Downloading http://mirrors.aliyun.com/pypi/packages/a4/ed/1f1afb2e9e7f38a545d628f864d562a5ae64fe6f7a10e28ffb9b185b4e89/importlib_resources-6.5.2-py3-none-any.whl (37 kB)
+Requirement already satisfied: typing_extensions in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.0) (4.15.0)
+Requirement already satisfied: zipp in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.0) (3.23.0)
+Collecting decorator (from ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/4e/8c/f3147f5c4b73e7550fe5f9352eaa956ae838d5c51eb58e7a25b9f3e2643b/decorator-5.2.1-py3-none-any.whl (9.2 kB)
+Requirement already satisfied: exceptiongroup in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from ipython->mediapy) (1.3.1)
+Collecting jedi>=0.16 (from ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/c0/5a/9cac0c82afec3d09ccd97c8b6502d48f165f9124db81b4bcb90b4af974ee/jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 148.2 MB/s  0:00:00
+Collecting matplotlib-inline (from ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/af/33/ee4519fa02ed11a94aef9559552f3b17bb863f2ecfe1a35dc7f548cde231/matplotlib_inline-0.2.1-py3-none-any.whl (9.5 kB)
+Collecting pexpect>4.3 (from ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/9e/c3/059298687310d527a58bb01f3b1965787ee3b40dce76752eda8b44e9a2c5/pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/84/03/0d3ce49e2505ae70cf43bc5bb3033955d2fc9f932163e84dc0779cc47f48/prompt_toolkit-3.0.52-py3-none-any.whl (391 kB)
+Requirement already satisfied: pygments>=2.4.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from ipython->mediapy) (2.20.0)
+Collecting stack_data (from ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/f1/7b/ce1eafaf1a76852e2ec9b22edecf1daa58175c090266e9f6c64afcd81d91/stack_data-0.6.3-py3-none-any.whl (24 kB)
+Collecting traitlets>=5.13.0 (from ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/00/c0/8f5d070730d7836adc9c9b6408dec68c6ced86b304a9b26a14df072a6e8c/traitlets-5.14.3-py3-none-any.whl (85 kB)
+Collecting wcwidth (from prompt_toolkit<3.1.0,>=3.0.41->ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/68/5a/199c59e0a824a3db2b89c5d2dade7ab5f9624dbf6448dc291b46d5ec94d3/wcwidth-0.6.0-py3-none-any.whl (94 kB)
+Collecting parso<0.9.0,>=0.8.4 (from jedi>=0.16->ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/b6/61/fae042894f4296ec49e3f193aff5d7c18440da9e48102c3315e1bc4519a7/parso-0.8.6-py2.py3-none-any.whl (106 kB)
+Collecting ptyprocess>=0.5 (from pexpect>4.3->ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/22/a6/858897256d0deac81a172289110f31629fc4cee19b6f01283303e18c8db3/ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Requirement already satisfied: markdown-it-py>=1.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from jupytext->bddl==1.0.1) (4.0.0)
+Collecting mdit-py-plugins (from jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/fb/86/dd6e5db36df29e76c7a7699123569a4a18c1623ce68d826ed96c62643cae/mdit_py_plugins-0.5.0-py3-none-any.whl (57 kB)
+Collecting nbformat (from jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/a9/82/0340caa499416c78e5d8f5f05947ae4bc3cba53c9f038ab6e9ed964e22f1/nbformat-5.10.4-py3-none-any.whl (78 kB)
+Collecting tomli (from jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/7b/61/cceae43728b7de99d9b847560c262873a1f6c98202171fd5ed62640b494b/tomli-2.4.1-py3-none-any.whl (14 kB)
+Requirement already satisfied: mdurl~=0.1 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from markdown-it-py>=1.0->jupytext->bddl==1.0.1) (0.1.2)
+Requirement already satisfied: contourpy>=1.0.1 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from matplotlib->mediapy) (1.3.2)
+Requirement already satisfied: cycler>=0.10 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from matplotlib->mediapy) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from matplotlib->mediapy) (4.62.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from matplotlib->mediapy) (1.5.0)
+Requirement already satisfied: pyparsing>=3 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from matplotlib->mediapy) (3.3.2)
+Requirement already satisfied: python-dateutil>=2.7 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from matplotlib->mediapy) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from python-dateutil>=2.7->matplotlib->mediapy) (1.17.0)
+Collecting fastjsonschema>=2.15 (from nbformat->jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/cb/a8/20d0723294217e47de6d9e2e40fd4a9d2f7c4b6ef974babd482a59743694/fastjsonschema-2.21.2-py3-none-any.whl (24 kB)
+Collecting jsonschema>=2.6 (from nbformat->jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/69/90/f63fb5873511e014207a475e2bb4e8b2e570d655b00ac19a9a0ca0a385ee/jsonschema-4.26.0-py3-none-any.whl (90 kB)
+Collecting jupyter-core!=5.0.*,>=4.12 (from nbformat->jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/e7/e7/80988e32bf6f73919a113473a604f5a8f09094de312b9d52b79c2df7612b/jupyter_core-5.9.1-py3-none-any.whl (29 kB)
+Collecting attrs>=22.2.0 (from jsonschema>=2.6->nbformat->jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl (67 kB)
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=2.6->nbformat->jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/41/45/1a4ed80516f02155c51f51e8cedb3c1902296743db0bbc66608a0db2814f/jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=2.6->nbformat->jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/2c/58/ca301544e1fa93ed4f80d724bf5b194f6e4b945841c5bfd555878eea9fcb/referencing-0.37.0-py3-none-any.whl (26 kB)
+Collecting rpds-py>=0.25.0 (from jsonschema>=2.6->nbformat->jupytext->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/61/b5/707f6cf0066a6412aacc11d17920ea2e19e5b2f04081c64526eb35b5c6e7/rpds_py-0.30.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (390 kB)
+Requirement already satisfied: platformdirs>=2.5 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from jupyter-core!=5.0.*,>=4.12->nbformat->jupytext->bddl==1.0.1) (4.9.6)
+Collecting iniconfig>=1.0.1 (from pytest->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/cb/b1/3846dd7f199d53cb17f49cba7e651e9ce294d8497c8c150530ed11865bb8/iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Collecting pluggy<2,>=1.5 (from pytest->bddl==1.0.1)
+  Downloading http://mirrors.aliyun.com/pypi/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl (20 kB)
+Collecting executing>=1.2.0 (from stack_data->ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/c1/ea/53f2148663b321f21b5a606bd5f191517cf40b7072c0497d3c92c4a13b1e/executing-2.2.1-py2.py3-none-any.whl (28 kB)
+Collecting asttokens>=2.1.0 (from stack_data->ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/d2/39/e7eaf1799466a4aef85b6a4fe7bd175ad2b1c6345066aa33f1f58d4b18d0/asttokens-3.0.1-py3-none-any.whl (27 kB)
+Collecting pure-eval (from stack_data->ipython->mediapy)
+  Downloading http://mirrors.aliyun.com/pypi/packages/8e/37/efad0257dc6e593a18957422533ff0f87ede7c9c6ea010a2177d738fb82f/pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Requirement already satisfied: grpcio>=1.48.2 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from tensorboard->robomimic==0.2.0) (1.80.0)
+Requirement already satisfied: markdown>=2.6.8 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from tensorboard->robomimic==0.2.0) (3.10.2)
+Requirement already satisfied: protobuf!=4.24.0,>=3.19.6 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from tensorboard->robomimic==0.2.0) (6.33.6)
+Requirement already satisfied: setuptools>=41.0.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from tensorboard->robomimic==0.2.0) (80.9.0)
+Requirement already satisfied: tensorboard-data-server<0.8.0,>=0.7.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from tensorboard->robomimic==0.2.0) (0.7.2)
+Requirement already satisfied: werkzeug>=1.0.1 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from tensorboard->robomimic==0.2.0) (3.1.8)
+Requirement already satisfied: markupsafe>=2.1.1 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from werkzeug>=1.0.1->tensorboard->robomimic==0.2.0) (3.0.3)
+Requirement already satisfied: filelock in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (3.25.2)
+Requirement already satisfied: jinja2 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (3.1.6)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (12.4.127)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (12.4.127)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (12.4.127)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (12.4.5.8)
+Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (11.2.1.3)
+Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (10.3.5.147)
+Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (11.6.1.9)
+Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (12.3.1.170)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (0.6.2)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (12.4.127)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (12.4.127)
+Requirement already satisfied: triton==3.2.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (3.2.0)
+Requirement already satisfied: sympy==1.13.1 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from torch->robomimic==0.2.0) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages (from sympy==1.13.1->torch->robomimic==0.2.0) (1.3.0)
+Building wheels for collected packages: bddl, robomimic, easydict, gym, future, egl_probe
+  Building wheel for bddl (pyproject.toml): started
+  Building wheel for bddl (pyproject.toml): finished with status 'done'
+  Created wheel for bddl: filename=bddl-1.0.1-py3-none-any.whl size=212419 sha256=10248eb703449e6ab113c736328a5dbc85b9818503345a183791b2d3273f9b22
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s9bc7hu9/wheels/69/34/20/44b2799e3c4328a3d22b5b6fb02c8651885b80d3450f0916dc
+  Building wheel for robomimic (pyproject.toml): started
+  Building wheel for robomimic (pyproject.toml): finished with status 'done'
+  Created wheel for robomimic: filename=robomimic-0.2.0-py3-none-any.whl size=223312 sha256=1fbf2ec14604f6118eb7b3efa7d1bc3d99ed6aa77b1565a779b8a117cc96426c
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s9bc7hu9/wheels/36/9c/8f/f12954058425afa3f3ec19e9b620765ebcd166bf391f02b436
+  Building wheel for easydict (pyproject.toml): started
+  Building wheel for easydict (pyproject.toml): finished with status 'done'
+  Created wheel for easydict: filename=easydict-1.9-py3-none-any.whl size=6420 sha256=f9304a24a610c611d9d46a84c638f2cb593ea9ab1baf07a16cb6a55188886a29
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s9bc7hu9/wheels/1f/20/7f/3be3ee5ea87385f5d032baf877805c2b27cd93f6012bb7a747
+  Building wheel for gym (pyproject.toml): started
+  Building wheel for gym (pyproject.toml): finished with status 'done'
+  Created wheel for gym: filename=gym-0.25.2-py3-none-any.whl size=852397 sha256=1bc650f1cf851c96ccaef2609be24057fa57f7262464a92ac1027d46a9d8f910
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s9bc7hu9/wheels/9b/a6/1f/007130c66ddb0d2d51395a9de904c7a97163be3f386927ca3e
+  Building wheel for future (pyproject.toml): started
+  Building wheel for future (pyproject.toml): finished with status 'done'
+  Created wheel for future: filename=future-0.18.2-py3-none-any.whl size=491150 sha256=210149af5dd508c21c79b057023b617941a7add0fad6e933def5d3bf7fc72b8f
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s9bc7hu9/wheels/c2/32/6c/54d9aec117a526c871373538b73d2a9283ae489014d6f7b75e
+  Building wheel for egl_probe (pyproject.toml): started
+  Building wheel for egl_probe (pyproject.toml): finished with status 'done'
+  Created wheel for egl_probe: filename=egl_probe-1.0.2-cp310-cp310-linux_x86_64.whl size=475377 sha256=25c676f80a095c30aef0f4bfe75bde2e17300369f49f9cf9b586f36eb412c485
+  Stored in directory: /tmp/pip-ephem-wheel-cache-s9bc7hu9/wheels/bb/26/23/506b0f6002ddfde17a37f3234a15637db927a05eae271b15fc
+Successfully built bddl robomimic easydict gym future egl_probe
+Installing collected packages: pyopengl, pure-eval, ptyprocess, gym_notices, glfw, fastjsonschema, einops, egl_probe, easydict, wcwidth, traitlets, tomli, rpds-py, pluggy, pexpect, parso, numpy, llvmlite, iniconfig, importlib_resources, imageio-ffmpeg, future, executing, etils, decorator, cloudpickle, attrs, asttokens, tensorboardX, stack_data, referencing, pytest, prompt_toolkit, opencv-python, numba, msgpack-numpy, mdit-py-plugins, matplotlib-inline, jupyter-core, jedi, hydra-core, h5py, gym, jsonschema-specifications, ipython, thop, mujoco, mediapy, jsonschema, robosuite, robomimic, nbformat, jupytext, bddl
+  Attempting uninstall: einops
+    Found existing installation: einops 0.8.2
+    Uninstalling einops-0.8.2:
+      Successfully uninstalled einops-0.8.2
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.26.4
+    Uninstalling numpy-1.26.4:
+      Successfully uninstalled numpy-1.26.4
+
+Successfully installed asttokens-3.0.1 attrs-26.1.0 bddl-1.0.1 cloudpickle-2.1.0 decorator-5.2.1 easydict-1.9 egl_probe-1.0.2 einops-0.4.1 etils-1.13.0 executing-2.2.1 fastjsonschema-2.21.2 future-0.18.2 glfw-2.10.0 gym-0.25.2 gym_notices-0.1.0 h5py-3.16.0 hydra-core-1.2.0 imageio-ffmpeg-0.6.0 importlib_resources-6.5.2 iniconfig-2.3.0 ipython-8.39.0 jedi-0.19.2 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 jupyter-core-5.9.1 jupytext-1.19.1 llvmlite-0.47.0 matplotlib-inline-0.2.1 mdit-py-plugins-0.5.0 mediapy-1.2.6 msgpack-numpy-0.4.8 mujoco-3.6.0 nbformat-5.10.4 numba-0.65.0 numpy-1.24.4 opencv-python-4.6.0.66 parso-0.8.6 pexpect-4.9.0 pluggy-1.6.0 prompt_toolkit-3.0.52 ptyprocess-0.7.0 pure-eval-0.2.3 pyopengl-3.1.10 pytest-9.0.3 referencing-0.37.0 robomimic-0.2.0 robosuite-1.4.0 rpds-py-0.30.0 stack_data-0.6.3 tensorboardX-2.6.5 thop-0.1.1.post2209072238 tomli-2.4.1 traitlets-5.14.3 wcwidth-0.6.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[PIP] install LIBERO editable
+Looking in indexes: http://mirrors.aliyun.com/pypi/simple
+Obtaining file:///root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: libero
+  Building editable for libero (pyproject.toml): started
+  Building editable for libero (pyproject.toml): finished with status 'done'
+  Created wheel for libero: filename=libero-0.1.0-0.editable-py3-none-any.whl size=7113 sha256=ae296ec4fbecb0c6c4b83951980df1f9cba967e02e3e484f5fa7bb5e17284847
+  Stored in directory: /tmp/pip-ephem-wheel-cache-lze5wza3/wheels/f4/e6/90/a4da42d682128cb712a7965d988639b74d635302d4028e6edb
+Successfully built libero
+Installing collected packages: libero
+Successfully installed libero-0.1.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[DONE] 2026-04-11T05:44:17+08:00 LIBERO env setup

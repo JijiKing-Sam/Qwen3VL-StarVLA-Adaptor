@@ -1,0 +1,218 @@
+[robosuite WARNING] No private macro file found! (__init__.py:7)
+[robosuite WARNING] It is recommended to use a private macro file (__init__.py:8)
+[robosuite WARNING] To setup, run: python /root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages/robosuite/scripts/setup_macros.py (__init__.py:9)
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+04/11 [05:49:59] INFO     | >> Arguments: {                    eval_libero.py:59
+                              "host": "127.0.0.1",                              
+                              "port": 5694,                                     
+                              "task_suite_name":                                
+                          "libero_goal",                                        
+                              "num_steps_wait": 10,                             
+                              "num_trials_per_task": 1,                         
+                              "video_out_path":                                 
+                          "/root/autodl-tmp/starvla-official-q                  
+                          wen3vl-20260411/results/libero_eval_                  
+                          smoke/libero_goal_qwen3_vl_oft_steps                  
+                          50000_trials1_20260411_054956",                       
+                              "seed": 7,                                        
+                              "pretrained_path":                                
+                          "/root/autodl-tmp/starvla-official-q                  
+                          wen3vl-20260411/checkpoints/Qwen3-VL                  
+                          -OFT-LIBERO-4in1/checkpoints/steps_5                  
+                          0000_pytorch_model.pt",                               
+                              "post_process_action": true,                      
+                              "job_name": "qwen3_vl_oft_smoke"                  
+                          }                                                     
+[info] using task orders [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                 INFO     | >> Task suite: libero_goal         eval_libero.py:68
+                 INFO     | >> Waiting for server  websocket_policy_client.py:34
+                          at                                                    
+                          ws://127.0.0.1:5694...                                
+*** policy_setup: franka, unnorm_key: None ***
+                 INFO     | >> [*] Loading from local checkpoint    tools.py:174
+                          path                                                  
+                          `/root/autodl-tmp/starvla-official-qwen3v             
+                          l-20260411/checkpoints/Qwen3-VL-OFT-LIBER             
+                          O-4in1/checkpoints/steps_50000_pytorch_mo             
+                          del.pt`                                               
+                 INFO     | >> [*] Loading from local checkpoint    tools.py:174
+                          path                                                  
+                          `/root/autodl-tmp/starvla-official-qwen3v             
+                          l-20260411/checkpoints/Qwen3-VL-OFT-LIBER             
+                          O-4in1/checkpoints/steps_50000_pytorch_mo             
+                          del.pt`                                               
+  0%|          | 0/10 [00:00<?, ?it/s]/root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO/libero/libero/benchmark/__init__.py:164: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  init_states = torch.load(init_states_path)
+
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:00] INFO     | >>                                eval_libero.py:110
+                          Task: open the middle drawer of the                   
+                          cabinet                                               
+04/11 [05:50:01] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:05] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 1 eval_libero.py:230
+                 INFO     | >> # successes: 1 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:04<00:00,  4.77s/it][A100%|██████████| 1/1 [00:04<00:00,  4.77s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 10%|█         | 1/10 [00:06<00:54,  6.05s/it]/root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO/libero/libero/benchmark/__init__.py:164: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  init_states = torch.load(init_states_path)
+
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:06] INFO     | >>                                eval_libero.py:110
+                          Task: put the bowl on the stove                       
+04/11 [05:50:07] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:10] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 2 eval_libero.py:230
+                 INFO     | >> # successes: 2 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:03<00:00,  3.57s/it][A100%|██████████| 1/1 [00:03<00:00,  3.57s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 20%|██        | 2/10 [00:10<00:41,  5.13s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:11] INFO     | >>                                eval_libero.py:110
+                          Task: put the wine bottle on top of                   
+                          the cabinet                                           
+04/11 [05:50:12] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:14] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 3 eval_libero.py:230
+                 INFO     | >> # successes: 3 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:03<00:00,  3.31s/it][A100%|██████████| 1/1 [00:03<00:00,  3.31s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 30%|███       | 3/10 [00:14<00:32,  4.68s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:15] INFO     | >>                                eval_libero.py:110
+                          Task: open the top drawer and put                     
+                          the bowl inside                                       
+04/11 [05:50:16] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:20] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 4 eval_libero.py:230
+                 INFO     | >> # successes: 4 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:05<00:00,  5.64s/it][A100%|██████████| 1/1 [00:05<00:00,  5.64s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 40%|████      | 4/10 [00:21<00:32,  5.39s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:21] INFO     | >>                                eval_libero.py:110
+                          Task: put the bowl on top of the                      
+                          cabinet                                               
+04/11 [05:50:22] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:25] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 5 eval_libero.py:230
+                 INFO     | >> # successes: 5 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:03<00:00,  3.55s/it][A100%|██████████| 1/1 [00:03<00:00,  3.55s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 50%|█████     | 5/10 [00:25<00:25,  5.01s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A                 INFO     | >>                                eval_libero.py:110
+                          Task: push the plate to the front                     
+                          of the stove                                          
+04/11 [05:50:26] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:30] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 6 eval_libero.py:230
+                 INFO     | >> # successes: 6 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:04<00:00,  4.36s/it][A100%|██████████| 1/1 [00:04<00:00,  4.36s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 60%|██████    | 6/10 [00:30<00:20,  5.06s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:31] INFO     | >>                                eval_libero.py:110
+                          Task: put the cream cheese in the                     
+                          bowl                                                  
+                 INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:34] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 7 eval_libero.py:230
+                 INFO     | >> # successes: 7 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:03<00:00,  3.45s/it][A100%|██████████| 1/1 [00:03<00:00,  3.45s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 70%|███████   | 7/10 [00:34<00:14,  4.79s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:35] INFO     | >>                                eval_libero.py:110
+                          Task: turn on the stove                               
+04/11 [05:50:36] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:38] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 8 eval_libero.py:230
+                 INFO     | >> # successes: 8 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:03<00:00,  3.13s/it][A100%|██████████| 1/1 [00:03<00:00,  3.13s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 80%|████████  | 8/10 [00:38<00:09,  4.51s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:39] INFO     | >>                                eval_libero.py:110
+                          Task: put the bowl on the plate                       
+04/11 [05:50:40] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:42] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far: 9 eval_libero.py:230
+                 INFO     | >> # successes: 9 (100.0%)        eval_libero.py:231
+
+100%|██████████| 1/1 [00:03<00:00,  3.11s/it][A100%|██████████| 1/1 [00:03<00:00,  3.11s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+ 90%|█████████ | 9/10 [00:42<00:04,  4.32s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A04/11 [05:50:43] INFO     | >>                                eval_libero.py:110
+                          Task: put the wine bottle on the                      
+                          rack                                                  
+04/11 [05:50:44] INFO     | >> Starting episode 1...          eval_libero.py:124
+04/11 [05:50:47] INFO     | >> Success: True                  eval_libero.py:229
+                 INFO     | >> # episodes completed so far:   eval_libero.py:230
+                          10                                                    
+                 INFO     | >> # successes: 10 (100.0%)       eval_libero.py:231
+
+100%|██████████| 1/1 [00:04<00:00,  4.60s/it][A100%|██████████| 1/1 [00:04<00:00,  4.61s/it]
+                 INFO     | >> Current task success rate: 1.0 eval_libero.py:236
+                 INFO     | >> Current total success rate:    eval_libero.py:239
+                          1.0                                                   
+100%|██████████| 10/10 [00:48<00:00,  4.64s/it]100%|██████████| 10/10 [00:48<00:00,  4.81s/it]
+                 INFO     | >> Total success rate: 1.0        eval_libero.py:243
+                 INFO     | >> Total episodes: 10             eval_libero.py:246
+Exception ignored in: <function MjRenderContext.__del__ at 0x7f0347dab400>
+Traceback (most recent call last):
+  File "/root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages/robosuite/utils/binding_utils.py", line 199, in __del__
+    self.gl_ctx.free()
+  File "/root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7f03239c5b40>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f034969a340>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f034969a340>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7f0349699cc0>,
+	),
+	result = 0
+)
+Exception ignored in: <function EGLGLContext.__del__ at 0x7f0347dab250>
+Traceback (most recent call last):
+  File "/root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages/robosuite/renderers/context/egl_context.py", line 155, in __del__
+    self.free()
+  File "/root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages/robosuite/renderers/context/egl_context.py", line 149, in free
+    EGL.eglMakeCurrent(EGL_DISPLAY, EGL.EGL_NO_SURFACE, EGL.EGL_NO_SURFACE, EGL.EGL_NO_CONTEXT)
+  File "/root/autodl-tmp/starvla-official-qwen3vl-20260411/envs/libero/lib/python3.10/site-packages/OpenGL/error.py", line 230, in glCheckError
+    raise self._errorClass(
+OpenGL.raw.EGL._errors.EGLError: EGLError(
+	err = EGL_NOT_INITIALIZED,
+	baseOperation = eglMakeCurrent,
+	cArguments = (
+		<OpenGL._opaque.EGLDisplay_pointer object at 0x7f03239c5b40>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f034969a340>,
+		<OpenGL._opaque.EGLSurface_pointer object at 0x7f034969a340>,
+		<OpenGL._opaque.EGLContext_pointer object at 0x7f0349699cc0>,
+	),
+	result = 0
+)

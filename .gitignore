@@ -1,0 +1,35 @@
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local/editor
+.idea/
+.vscode/
+*.tmp
+*.log.tmp
+
+# Large binary archives generated from the remote export.
+# Keep the manifest, SHA256SUMS, patch, and text indexes in git.
+archives/*.tar
+archives/*.tar.gz
+archives/*.tgz
+archives/*.zip
+archives/*.7z
+
+# Never commit model weights, datasets, or environments if they are added later.
+large_artifacts/
+envs/
+**/Pretrained_models/
+**/playground/Datasets/
+**/checkpoints/**/*.pt
+**/checkpoints/**/*.pth
+**/checkpoints/**/*.safetensors
+**/data/**/*.parquet
+**/data/**/videos/
+
+# OS metadata
+Thumbs.db
+.DS_Store

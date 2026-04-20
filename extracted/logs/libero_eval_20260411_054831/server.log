@@ -1,0 +1,11 @@
+INFO:starVLA.model.framework.share_tools:[*] Loading from local checkpoint path `/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/checkpoints/steps_50000_pytorch_model.pt`
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 37.17it/s]
+INFO:root:Creating server (host: autodl-container-af19428472-6c01572e, ip: 127.0.0.1)
+INFO:root:server running ...
+INFO:websockets.server:server listening on 0.0.0.0:5694
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 55830) opened
+INFO:root:Connection from ('127.0.0.1', 55830) closed
+INFO:websockets.server:connection open
+INFO:root:Connection from ('127.0.0.1', 54212) opened
+INFO:root:Connection from ('127.0.0.1', 54212) closed

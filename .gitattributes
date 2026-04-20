@@ -1,0 +1,18 @@
+# Keep source/config/log text stable across platforms.
+* text=auto eol=lf
+
+# Binary/media artifacts.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp4 binary
+*.pkl binary
+*.pt binary
+*.pth binary
+*.safetensors binary
+*.tar binary
+*.tar.gz binary
+*.tgz binary
+*.zip binary
+*.7z binary

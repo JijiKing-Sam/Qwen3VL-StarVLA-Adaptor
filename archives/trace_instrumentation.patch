@@ -1,0 +1,462 @@
+diff --git a/deployment/model_server/server_policy.py b/deployment/model_server/server_policy.py
+index 4596e37..6bf3ce0 100644
+--- a/deployment/model_server/server_policy.py
++++ b/deployment/model_server/server_policy.py
+@@ -7,10 +7,12 @@ import socket
+ import argparse
+ from deployment.model_server.tools.websocket_policy_server import WebsocketPolicyServer
+ from starVLA.model.framework.base_framework import baseframework
++from deployment.model_server.tools.trace_tools import trace
+ import torch, os
+ 
+ 
+ def main(args) -> None:
++    trace("server_policy.args", args=vars(args))
+     # Example usage:
+     # policy = YourPolicyClass()  # Replace with your actual policy class
+     # server = WebsocketPolicyServer(policy, host="localhost", port=10091)
+@@ -19,10 +21,13 @@ def main(args) -> None:
+     vla = baseframework.from_pretrained( # TODO should auto detect framework from model path
+         args.ckpt_path,
+     )
++    trace("server_policy.loaded", framework=type(vla).__name__, ckpt_path=args.ckpt_path, config=getattr(vla, "config", None))
+ 
+     if args.use_bf16: # False
+         vla = vla.to(torch.bfloat16)
+     vla = vla.to("cuda").eval()
++    first_param = next(vla.parameters(), None)
++    trace("server_policy.ready", framework=type(vla).__name__, dtype=getattr(first_param, "dtype", None), device=getattr(first_param, "device", None), use_bf16=args.use_bf16)
+ 
+     hostname = socket.gethostname()
+     local_ip = socket.gethostbyname(hostname)
+@@ -37,6 +42,7 @@ def main(args) -> None:
+         metadata={"env": "simpler_env"},
+     )
+     logging.info("server running ...")
++    trace("server_policy.listen", host="0.0.0.0", port=args.port, idle_timeout=args.idle_timeout, metadata={"env": "simpler_env"})
+     server.serve_forever()
+ 
+ 
+diff --git a/deployment/model_server/tools/websocket_policy_client.py b/deployment/model_server/tools/websocket_policy_client.py
+index 4b1291a..018ba05 100644
+--- a/deployment/model_server/tools/websocket_policy_client.py
++++ b/deployment/model_server/tools/websocket_policy_client.py
+@@ -10,6 +10,7 @@ from typing_extensions import override
+ import websockets.sync.client
+ 
+ from . import msgpack_numpy
++from .trace_tools import should_trace, trace
+ 
+ 
+ class WebsocketClientPolicy:
+@@ -53,6 +54,7 @@ class WebsocketClientPolicy:
+                     ping_timeout=20,
+                 )
+                 metadata = msgpack_numpy.unpackb(conn.recv())
++                trace("websocket.client.connected", uri=self._uri, metadata=metadata)
+                 return conn, metadata
+             except ConnectionRefusedError:
+                 logging.info(f"Still waiting for server {self._uri} ...")
+@@ -66,12 +68,22 @@ class WebsocketClientPolicy:
+     
+     @override
+     def predict_action(self, query_info: Dict) -> Dict:
++        do_trace = should_trace("websocket.client.predict_action")
+         data = self._packer.pack(query_info)
++        if do_trace:
++            trace("websocket.client.send", uri=self._uri, packed_bytes=len(data), query=query_info)
++        start = time.time()
+         self._ws.send(data)
+         response = self._ws.recv()
++        latency_s = time.time() - start
+         if isinstance(response, str):
++            if do_trace:
++                trace("websocket.client.error", uri=self._uri, latency_s=latency_s, response=response)
+             raise RuntimeError(f"Error in inference server:\n{response}")
+-        return msgpack_numpy.unpackb(response)
++        unpacked = msgpack_numpy.unpackb(response)
++        if do_trace:
++            trace("websocket.client.recv", uri=self._uri, latency_s=latency_s, response_bytes=len(response), response=unpacked)
++        return unpacked
+ 
+ 
+ 
+diff --git a/deployment/model_server/tools/websocket_policy_server.py b/deployment/model_server/tools/websocket_policy_server.py
+index 3f1e52b..b739041 100644
+--- a/deployment/model_server/tools/websocket_policy_server.py
++++ b/deployment/model_server/tools/websocket_policy_server.py
+@@ -12,6 +12,7 @@ import websockets.frames
+ 
+ # from openpi_client import base_policy as _base_policy
+ from . import msgpack_numpy
++from .trace_tools import should_trace, trace
+ 
+ class WebsocketPolicyServer:
+     """Serves a policy using the websocket protocol. See websocket_client_policy.py for a client implementation.
+@@ -71,9 +72,16 @@ class WebsocketPolicyServer:
+         while True:
+             try:
+                 msg = msgpack_numpy.unpackb(await websocket.recv())
++                do_trace = should_trace("websocket.server.message")
++                if do_trace:
++                    trace("websocket.server.recv", remote=str(websocket.remote_address), msg=msg)
+                 self._last_active = time.time()  # 每次收到消息刷新活跃时间
++                route_start = time.time()
+                 ret = self._route_message(msg)  # route message
+-                await websocket.send(packer.pack(ret))
++                packed_ret = packer.pack(ret)
++                if do_trace:
++                    trace("websocket.server.send", remote=str(websocket.remote_address), latency_s=time.time() - route_start, packed_bytes=len(packed_ret), response=ret)
++                await websocket.send(packed_ret)
+             except websockets.ConnectionClosed:
+                 logging.info(f"Connection from {websocket.remote_address} closed")
+                 break
+@@ -115,7 +123,13 @@ class WebsocketPolicyServer:
+                 }
+             try:
+ 
++                policy_start = time.time()
++                do_trace = should_trace("websocket.server.route.infer")
++                if do_trace:
++                    trace("websocket.server.route.infer", request_id=req_id, message_type=mtype, payload=msg)
+                 ouput_dict = self._policy.predict_action(**msg)
++                if do_trace:
++                    trace("websocket.server.policy_output", request_id=req_id, latency_s=time.time() - policy_start, output=ouput_dict)
+             except Exception as e:
+                 logging.exception("Policy inference error (request_id=%s)", req_id)
+                 logging.exception(e)
+diff --git a/examples/LIBERO/eval_files/eval_libero.py b/examples/LIBERO/eval_files/eval_libero.py
+index 23d6c29..f39314d 100644
+--- a/examples/LIBERO/eval_files/eval_libero.py
++++ b/examples/LIBERO/eval_files/eval_libero.py
+@@ -17,6 +17,7 @@ from libero.libero import benchmark, get_libero_path
+ from libero.libero.envs import OffScreenRenderEnv
+ os.environ["TOKENIZERS_PARALLELISM"] = "false"
+ from examples.LIBERO.eval_files.model2libero_interface import ModelClient
++from deployment.model_server.tools.trace_tools import should_trace, trace
+ 
+ 
+ LIBERO_DUMMY_ACTION = [0.0] * 6 + [-1.0]
+@@ -57,6 +58,7 @@ class Args:
+ 
+ def eval_libero(args: Args) -> None:
+     logging.info(f"Arguments: {json.dumps(dataclasses.asdict(args), indent=4)}")
++    trace("eval.args", args=dataclasses.asdict(args))
+ 
+     # Set random seed
+     np.random.seed(args.seed)
+@@ -84,6 +86,8 @@ def eval_libero(args: Args) -> None:
+     else:
+         raise ValueError(f"Unknown task suite: {args.task_suite_name}")
+ 
++    trace("eval.suite", task_suite_name=args.task_suite_name, num_tasks=num_tasks_in_suite, max_steps=max_steps, video_out_path=args.video_out_path)
++
+     client_model = ModelClient(
+         policy_ckpt_path=args.pretrained_path, # to get unnormalization stats
+         host=args.host,
+@@ -100,9 +104,11 @@ def eval_libero(args: Args) -> None:
+ 
+         # Get default LIBERO initial states
+         initial_states = task_suite.get_task_init_states(task_id)
++        trace("eval.task", task_id=task_id, task_language=task.language, initial_states=initial_states)
+ 
+         # Initialize LIBERO environment and task description
+         env, task_description = _get_libero_env(task, LIBERO_ENV_RESOLUTION, args.seed)
++        trace("eval.env", task_id=task_id, task_description=task_description, bddl_file=task.bddl_file, problem_folder=task.problem_folder)
+ 
+         # Start episodes
+         task_episodes, task_successes = 0, 0
+@@ -115,6 +121,8 @@ def eval_libero(args: Args) -> None:
+ 
+             # Set initial states
+             obs = env.set_init_state(initial_states[episode_idx])
++            if should_trace("eval.episode.reset", step=total_episodes, every=10):
++                trace("eval.episode.reset", task_id=task_id, episode_idx=episode_idx, task_description=task_description, init_state=initial_states[episode_idx], obs_keys=list(obs.keys()))
+ 
+             # Setup
+             t = 0
+@@ -152,6 +160,10 @@ def eval_libero(args: Args) -> None:
+                     )
+                 )
+ 
++                do_trace_step = should_trace("eval.step", step=step)
++                if do_trace_step:
++                    trace("eval.step.observation", task_id=task_id, episode_idx=episode_idx, t=t, step=step, img=img, wrist_img=wrist_img, state=state, obs_keys=list(obs.keys()))
++
+                 observation = { # 
+                     "observation.primary": np.expand_dims(
+                         img, axis=0
+@@ -175,6 +187,8 @@ def eval_libero(args: Args) -> None:
+                 response = client_model.step(example=example_dict, step=step) 
+                 
+                 end_time = time.time()
++                if do_trace_step:
++                    trace("eval.step.model_response", task_id=task_id, episode_idx=episode_idx, t=t, step=step, latency_s=end_time - start_time, response=response)
+                 # print(f"time: {end_time - start_time}")
+                 
+                 # # 
+@@ -196,11 +210,15 @@ def eval_libero(args: Args) -> None:
+                 else:
+                     delta_action = np.concatenate([world_vector_delta, rotation_delta, gripper], axis=0)
+ 
++                if do_trace_step:
++                    trace("eval.step.action", task_id=task_id, episode_idx=episode_idx, t=t, step=step, raw_action=raw_action, delta_action=delta_action)
+                 full_actions.append(delta_action)
+                 
+                 # __import__("ipdb").set_trace()
+                 # see ../robosuite/controllers/controller_factory.py
+                 obs, reward, done, info = env.step(delta_action.tolist())
++                if do_trace_step:
++                    trace("eval.step.env_result", task_id=task_id, episode_idx=episode_idx, t=t, step=step, reward=reward, done=done, info=info, next_obs_keys=list(obs.keys()))
+                 if done:
+                     task_successes += 1
+                     total_successes += 1
+@@ -222,6 +240,8 @@ def eval_libero(args: Args) -> None:
+             )
+             
+             full_actions = np.stack(full_actions)
++            if should_trace("eval.episode.summary", step=total_episodes, every=10):
++                trace("eval.episode.summary", task_id=task_id, episode_idx=episode_idx, task_description=task_description, success=done, total_episodes=total_episodes, total_successes=total_successes, video_suffix=suffix, full_actions=full_actions)
+             # np.save(pathlib.Path(args.video_out_path) / f"rollout_{task_segment}_episode{episode_idx}_{suffix}.npy", full_actions)
+             
+             # print(pathlib.Path(args.video_out_path) / f"rollout_{task_segment}_episode{episode_idx}_{suffix}.mp4")
+diff --git a/examples/LIBERO/eval_files/model2libero_interface.py b/examples/LIBERO/eval_files/model2libero_interface.py
+index 14c6b13..c42d879 100644
+--- a/examples/LIBERO/eval_files/model2libero_interface.py
++++ b/examples/LIBERO/eval_files/model2libero_interface.py
+@@ -1,11 +1,13 @@
+ from collections import deque
+ from typing import Optional, Sequence
+ import os
++import time
+ import cv2 as cv
+ import matplotlib.pyplot as plt
+ import numpy as np
+ 
+ from deployment.model_server.tools.websocket_policy_client import WebsocketClientPolicy
++from deployment.model_server.tools.trace_tools import should_trace, trace
+ 
+ from examples.SimplerEnv.eval_files.adaptive_ensemble import AdaptiveEnsembler
+ from typing import Dict
+@@ -61,6 +63,7 @@ class ModelClient:
+ 
+         self.action_norm_stats = self.get_action_stats(self.unnorm_key, policy_ckpt_path=policy_ckpt_path)
+         self.action_chunk_size = self.get_action_chunk_size(policy_ckpt_path=policy_ckpt_path)
++        trace("model_client.init", policy_ckpt_path=str(policy_ckpt_path), host=host, port=port, image_size=image_size, action_chunk_size=self.action_chunk_size, action_norm_stats=self.action_norm_stats)
+         
+ 
+     def _add_image_to_history(self, image: np.ndarray) -> None:
+@@ -78,6 +81,7 @@ class ModelClient:
+         self.gripper_action_repeat = 0
+         self.sticky_gripper_action = 0.0
+         self.previous_gripper_action = None
++        trace("model_client.reset", task_description=task_description)
+ 
+ 
+     def step(
+@@ -95,6 +99,9 @@ class ModelClient:
+ 
+         task_description = example.get("lang", None) 
+         images = example["image"]  # list of images for history
++        do_trace_step = should_trace("model_client.step", step=step)
++        if do_trace_step:
++            trace("model_client.step.input", step=step, task_description=task_description, image_count=len(images), images=images)
+ 
+         if example is not None:
+             if task_description != self.task_description:
+@@ -102,6 +109,8 @@ class ModelClient:
+                 
+         images = [self._resize_image(image) for image in images]
+         example["image"] = images
++        if do_trace_step:
++            trace("model_client.step.resized", step=step, image_size=self.image_size, images=images)
+         vla_input = {
+             "examples": [example],
+             "do_sample": False,
+@@ -112,7 +121,10 @@ class ModelClient:
+ 
+         action_chunk_size = self.action_chunk_size
+         if step % action_chunk_size == 0:
++            request_start = time.time()
+             response = self.client.predict_action(vla_input)
++            if do_trace_step:
++                trace("model_client.server.response", step=step, latency_s=time.time() - request_start, response=response)
+             try:
+                 normalized_actions = response["data"]["normalized_actions"] # B, chunk, D        
+             except KeyError:
+@@ -121,6 +133,10 @@ class ModelClient:
+             
+             normalized_actions = normalized_actions[0]    
+             self.raw_actions = self.unnormalize_actions(normalized_actions=normalized_actions, action_norm_stats=self.action_norm_stats)
++            if do_trace_step:
++                trace("model_client.action_chunk", step=step, normalized_actions=normalized_actions, raw_actions=self.raw_actions)
++        elif do_trace_step:
++            trace("model_client.cached_action_chunk", step=step, chunk_index=step % action_chunk_size, raw_actions=self.raw_actions)
+         
+         raw_actions = self.raw_actions[step % action_chunk_size][None]    
+ 
+@@ -129,6 +145,8 @@ class ModelClient:
+             "rotation_delta": np.array(raw_actions[0, 3:6]),
+             "open_gripper": np.array(raw_actions[0, 6:7]),  # range [0, 1]; 1 = open; 0 = close
+         }
++        if do_trace_step:
++            trace("model_client.step.output", step=step, raw_action=raw_action)
+ 
+         return {"raw_action": raw_action}
+ 
+@@ -143,6 +161,8 @@ class ModelClient:
+             0.5 * (normalized_actions + 1) * (action_high - action_low) + action_low,
+             normalized_actions,
+         )
++        if should_trace("model_client.unnormalize"):
++            trace("model_client.unnormalize", normalized_actions=normalized_actions, action_norm_stats=action_norm_stats, actions=actions)
+         
+         return actions
+ 
+diff --git a/starVLA/model/framework/QwenOFT.py b/starVLA/model/framework/QwenOFT.py
+index b9ef3c0..602b342 100644
+--- a/starVLA/model/framework/QwenOFT.py
++++ b/starVLA/model/framework/QwenOFT.py
+@@ -33,6 +33,7 @@ from PIL import Image
+ from starVLA.training.trainer_utils import initialize_overwatch
+ from starVLA.model.tools import FRAMEWORK_REGISTRY
+ from deployment.model_server.tools.image_tools import to_pil_preserve
++from deployment.model_server.tools.trace_tools import should_trace, trace
+ 
+ logger = initialize_overwatch(__name__)
+ 
+@@ -114,15 +115,22 @@ class Qwenvl_OFT(baseframework):
+         """
+         batch_images = [example["image"] for example in examples]  #  [B，[PLT]]
+         instructions = [example["lang"] for example in examples]  # [B, str]
+-        actions = [example["action"] for example in examples]  # label [B， len, 7]
++        actions = [example["action"] for example in examples]  # label [B, len, 7]
++        do_trace = should_trace("QwenOFT.forward")
++        if do_trace:
++            trace("qwen_oft.forward.input", batch_size=len(examples), batch_images=batch_images, instructions=instructions, actions=actions)
+         
+         # step 0: add special action token to instruction
+         action_tokens = self.action_token* self.chunk_len #can't add " " between two tokens, otherwise will be tokenized to multiple tokens
+         prompt_suffix = f" Please predict the next {self.chunk_len} robot actions: <action>{action_tokens}<action>."
+         instructions = [instruction + prompt_suffix for instruction in instructions]
++        if do_trace:
++            trace("qwen_oft.forward.prompt", chunk_len=self.chunk_len, action_token=self.action_token, action_token_id=self.action_token_id, prompt_suffix=prompt_suffix, instructions=instructions)
+ 
+         # Step 1: QWenVL input format
+         qwen_inputs = self.qwen_vl_interface.build_qwenvl_inputs(images=batch_images, instructions=instructions)
++        if do_trace:
++            trace("qwen_oft.forward.qwen_inputs", qwen_inputs=qwen_inputs)
+         with torch.autocast("cuda", dtype=torch.bfloat16):
+             qwenvl_outputs = self.qwen_vl_interface(
+                 **qwen_inputs,
+@@ -132,13 +140,19 @@ class Qwenvl_OFT(baseframework):
+             )
+             # last_hidden_state: [B, seq_len, H]
+             last_hidden = qwenvl_outputs.hidden_states[-1]   # [B, L, H]
++        if do_trace:
++            trace("qwen_oft.forward.qwenvl_outputs", hidden_state_count=len(qwenvl_outputs.hidden_states), last_hidden=last_hidden)
+ 
+         # Step 4: Action Expert Forward and Loss
+         with torch.autocast("cuda", dtype=torch.float32):
+             # 提取动作 token embedding 作为动作预测查询
+             input_ids = qwen_inputs.get("input_ids", None)
+             action_queries = self._gather_action_token_embeddings(last_hidden, input_ids, action_token_id=self.action_token_id)  # [B, chunk_len, H]
++            if do_trace:
++                trace("qwen_oft.forward.action_queries", input_ids=input_ids, action_queries=action_queries)
+             pred_actions = self.action_model.predict_action(action_queries)  # (B, chunk_len, action_dim)
++            if do_trace:
++                trace("qwen_oft.forward.pred_actions", pred_actions=pred_actions)
+ 
+             # 标签对齐：取最后 chunk_len 段
+             actions = torch.tensor(
+@@ -148,6 +162,8 @@ class Qwenvl_OFT(baseframework):
+ 
+             # 计算 L1 损失
+             action_loss = self.l1_loss(pred_actions, actions_target)
++            if do_trace:
++                trace("qwen_oft.forward.loss", actions_target=actions_target, action_loss=action_loss)
+ 
+         return {"action_loss": action_loss}
+ 
+@@ -171,20 +187,29 @@ class Qwenvl_OFT(baseframework):
+         """
+         if type(examples) is not list:
+             examples = [examples]
++        do_trace = should_trace("QwenOFT.predict_action")
+         batch_images = [to_pil_preserve(example["image"]) for example in examples]  #  [B，[PLT]]
+         instructions = [example["lang"] for example in examples]  # [B, str]
++        if do_trace:
++            trace("qwen_oft.predict.input", batch_size=len(examples), examples=examples, batch_images=batch_images, instructions=instructions)
+     
+         train_obs_image_size = getattr(self.config.datasets.vla_data, "image_size", None)
+         if train_obs_image_size:
+             batch_images = resize_images(batch_images, target_size=train_obs_image_size)
++        if do_trace:
++            trace("qwen_oft.predict.resized_images", train_obs_image_size=train_obs_image_size, batch_images=batch_images)
+     
+         # step 0: add special action token to instruction
+         action_tokens = self.action_token* self.chunk_len #can't add " " between two tokens, otherwise will be tokenized to multiple tokens
+         prompt_suffix = f" Please predict the next {self.chunk_len} robot actions: <action>{action_tokens}<action>."
+         instructions = [instruction + prompt_suffix for instruction in instructions]
++        if do_trace:
++            trace("qwen_oft.predict.prompt", chunk_len=self.chunk_len, action_token=self.action_token, action_token_id=self.action_token_id, prompt_suffix=prompt_suffix, instructions=instructions)
+ 
+         # Step 1: QWenVL input format
+         qwen_inputs = self.qwen_vl_interface.build_qwenvl_inputs(images=batch_images, instructions=instructions)
++        if do_trace:
++            trace("qwen_oft.predict.qwen_inputs", qwen_inputs=qwen_inputs)
+         with torch.autocast("cuda", dtype=torch.bfloat16):
+             qwenvl_outputs = self.qwen_vl_interface(
+                 **qwen_inputs,
+@@ -194,15 +219,23 @@ class Qwenvl_OFT(baseframework):
+             )
+             # last_hidden_state: [B, seq_len, H]
+             last_hidden = qwenvl_outputs.hidden_states[-1]   # [B, L, H]
++        if do_trace:
++            trace("qwen_oft.predict.qwenvl_outputs", hidden_state_count=len(qwenvl_outputs.hidden_states), last_hidden=last_hidden)
+ 
+         # Step 4: Action Expert Forward and Loss
+         with torch.autocast("cuda", dtype=torch.float32):
+             # 提取动作 token embedding 作为动作预测查询
+             input_ids = qwen_inputs.get("input_ids", None)
+             action_queries = self._gather_action_token_embeddings(last_hidden, input_ids, action_token_id=self.action_token_id)  # [B, chunk_len, H]
++            if do_trace:
++                trace("qwen_oft.predict.action_queries", input_ids=input_ids, action_queries=action_queries)
+             pred_actions = self.action_model.predict_action(action_queries)  # (B, chunk_len, action_dim)
++            if do_trace:
++                trace("qwen_oft.predict.pred_actions", pred_actions=pred_actions)
+ 
+         normalized_actions = pred_actions.detach().cpu().numpy()
++        if do_trace:
++            trace("qwen_oft.predict.output", normalized_actions=normalized_actions)
+         return {"normalized_actions": normalized_actions}
+ 
+     def _gather_action_token_embeddings(
+diff --git a/starVLA/model/modules/action_model/MLP_ActionHeader.py b/starVLA/model/modules/action_model/MLP_ActionHeader.py
+index 0cef440..5bfb36b 100644
+--- a/starVLA/model/modules/action_model/MLP_ActionHeader.py
++++ b/starVLA/model/modules/action_model/MLP_ActionHeader.py
+@@ -6,6 +6,7 @@
+ "this file is adap from https://github.com/moojink/openvla-oft/blob/main/prismatic/models/action_heads.py"
+ 
+ import torch.nn as nn
++from deployment.model_server.tools.trace_tools import should_trace, trace
+ 
+ 
+ class MLPResNetBlock(nn.Module):
+@@ -77,10 +78,15 @@ class L1RegressionActionHead(nn.Module):
+         actions_hidden_states: (B, chunk_len, hidden_dim)
+         返回: (B, chunk_len, action_dim)
+         """
++        do_trace = should_trace("L1RegressionActionHead.predict_action")
++        if do_trace:
++            trace("action_head.l1.input", actions_hidden_states=actions_hidden_states, action_dim=self.action_dim, num_actions_chunk=self.NUM_ACTIONS_CHUNK)
+         batch_size, chunk_len, hidden_dim = actions_hidden_states.shape
+         x = actions_hidden_states.reshape(batch_size * chunk_len, hidden_dim)
+         x = self.model(x)  # (B * chunk_len, action_dim)
+         actions = x.view(batch_size, chunk_len, self.action_dim)
++        if do_trace:
++            trace("action_head.l1.output", actions=actions)
+         return actions
+ 
+     def forward(self, actions_hidden_states):

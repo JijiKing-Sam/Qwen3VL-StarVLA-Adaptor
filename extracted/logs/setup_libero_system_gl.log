@@ -1,0 +1,216 @@
+[START] 2026-04-11T05:44:43+08:00 apt install EGL/OSMesa deps
+Get:1 https://repo.huaweicloud.com/ubuntu jammy InRelease [270 kB]
+Get:2 https://repo.huaweicloud.com/ubuntu jammy-backports InRelease [127 kB]
+Get:3 https://repo.huaweicloud.com/ubuntu jammy-proposed InRelease [279 kB]
+Get:4 https://repo.huaweicloud.com/ubuntu jammy-security InRelease [129 kB]
+Get:5 https://repo.huaweicloud.com/ubuntu jammy-updates InRelease [128 kB]
+Get:6 https://repo.huaweicloud.com/ubuntu jammy/restricted Sources [28.2 kB]
+Get:7 https://repo.huaweicloud.com/ubuntu jammy/multiverse Sources [361 kB]
+Get:8 https://repo.huaweicloud.com/ubuntu jammy/universe Sources [22.0 MB]
+Get:9 https://repo.huaweicloud.com/ubuntu jammy/main Sources [1668 kB]
+Get:10 https://repo.huaweicloud.com/ubuntu jammy/restricted amd64 Packages [164 kB]
+Get:11 https://repo.huaweicloud.com/ubuntu jammy/main amd64 Packages [1792 kB]
+Get:12 https://repo.huaweicloud.com/ubuntu jammy/universe amd64 Packages [17.5 MB]
+Get:13 https://repo.huaweicloud.com/ubuntu jammy/multiverse amd64 Packages [266 kB]
+Get:14 https://repo.huaweicloud.com/ubuntu jammy-backports/main Sources [10.3 kB]
+Get:15 https://repo.huaweicloud.com/ubuntu jammy-backports/universe Sources [14.0 kB]
+Get:16 https://repo.huaweicloud.com/ubuntu jammy-backports/universe amd64 Packages [35.6 kB]
+Get:17 https://repo.huaweicloud.com/ubuntu jammy-backports/main amd64 Packages [84.0 kB]
+Get:18 https://repo.huaweicloud.com/ubuntu jammy-proposed/restricted Sources [49.1 kB]
+Get:19 https://repo.huaweicloud.com/ubuntu jammy-proposed/multiverse Sources [1074 B]
+Get:20 https://repo.huaweicloud.com/ubuntu jammy-proposed/universe Sources [23.0 kB]
+Get:21 https://repo.huaweicloud.com/ubuntu jammy-proposed/main Sources [127 kB]
+Get:22 https://repo.huaweicloud.com/ubuntu jammy-proposed/multiverse amd64 Packages [1211 B]
+Get:23 https://repo.huaweicloud.com/ubuntu jammy-proposed/restricted amd64 Packages [2026 kB]
+Get:24 https://repo.huaweicloud.com/ubuntu jammy-proposed/universe amd64 Packages [62.0 kB]
+Get:25 https://repo.huaweicloud.com/ubuntu jammy-proposed/main amd64 Packages [845 kB]
+Get:26 https://repo.huaweicloud.com/ubuntu jammy-security/main Sources [426 kB]
+Get:27 https://repo.huaweicloud.com/ubuntu jammy-security/universe Sources [408 kB]
+Get:28 https://repo.huaweicloud.com/ubuntu jammy-security/restricted Sources [111 kB]
+Get:29 https://repo.huaweicloud.com/ubuntu jammy-security/multiverse Sources [29.0 kB]
+Get:30 https://repo.huaweicloud.com/ubuntu jammy-security/multiverse amd64 Packages [62.6 kB]
+Get:31 https://repo.huaweicloud.com/ubuntu jammy-security/main amd64 Packages [3889 kB]
+Get:32 https://repo.huaweicloud.com/ubuntu jammy-security/restricted amd64 Packages [6917 kB]
+Get:33 https://repo.huaweicloud.com/ubuntu jammy-security/universe amd64 Packages [1311 kB]
+Get:34 https://repo.huaweicloud.com/ubuntu jammy-updates/universe Sources [617 kB]
+Get:35 https://repo.huaweicloud.com/ubuntu jammy-updates/restricted Sources [117 kB]
+Get:36 https://repo.huaweicloud.com/ubuntu jammy-updates/main Sources [735 kB]
+Get:37 https://repo.huaweicloud.com/ubuntu jammy-updates/multiverse Sources [42.3 kB]
+Get:38 https://repo.huaweicloud.com/ubuntu jammy-updates/restricted amd64 Packages [7143 kB]
+Get:39 https://repo.huaweicloud.com/ubuntu jammy-updates/multiverse amd64 Packages [70.9 kB]
+Get:40 https://repo.huaweicloud.com/ubuntu jammy-updates/universe amd64 Packages [1622 kB]
+Get:41 https://repo.huaweicloud.com/ubuntu jammy-updates/main amd64 Packages [4226 kB]
+Fetched 75.7 MB in 4s (19.2 MB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libegl-mesa0 libgbm1 libgl-dev libglx-dev libpthread-stubs0-dev
+  libwayland-server0 libx11-dev libxau-dev libxcb1-dev libxdmcp-dev
+  x11proto-dev xorg-sgml-doctools xtrans-dev
+Suggested packages:
+  libgles1 libgles2 libvulkan1 libx11-doc libxcb-doc
+The following NEW packages will be installed:
+  libegl-dev libegl-mesa0 libegl1 libgbm1 libgl-dev libgl1-mesa-glx libglfw3
+  libglx-dev libosmesa6 libosmesa6-dev libpthread-stubs0-dev
+  libwayland-server0 libx11-dev libxau-dev libxcb1-dev libxdmcp-dev patchelf
+  x11proto-dev xorg-sgml-doctools xtrans-dev
+0 upgraded, 20 newly installed, 0 to remove and 138 not upgraded.
+Need to get 5190 kB of archives.
+After this operation, 21.1 MB of additional disk space will be used.
+Get:1 https://repo.huaweicloud.com/ubuntu jammy-security/main amd64 libwayland-server0 amd64 1.20.0-1ubuntu0.1 [34.3 kB]
+Get:2 https://repo.huaweicloud.com/ubuntu jammy-updates/main amd64 libgbm1 amd64 23.2.1-1ubuntu3.1~22.04.3 [33.5 kB]
+Get:3 https://repo.huaweicloud.com/ubuntu jammy-updates/main amd64 libegl-mesa0 amd64 23.2.1-1ubuntu3.1~22.04.3 [118 kB]
+Get:4 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libegl1 amd64 1.4.0-1 [28.6 kB]
+Get:5 https://repo.huaweicloud.com/ubuntu jammy/main amd64 xorg-sgml-doctools all 1:1.11-1.1 [10.9 kB]
+Get:6 https://repo.huaweicloud.com/ubuntu jammy/main amd64 x11proto-dev all 2021.5-1 [604 kB]
+Get:7 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libxau-dev amd64 1:1.0.9-1build5 [9724 B]
+Get:8 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libxdmcp-dev amd64 1:1.1.3-0ubuntu5 [26.5 kB]
+Get:9 https://repo.huaweicloud.com/ubuntu jammy/main amd64 xtrans-dev all 1.4.0-1 [68.9 kB]
+Get:10 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libpthread-stubs0-dev amd64 0.4-1build2 [5516 B]
+Get:11 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libxcb1-dev amd64 1.14-3ubuntu3 [86.5 kB]
+Get:12 https://repo.huaweicloud.com/ubuntu jammy-security/main amd64 libx11-dev amd64 2:1.7.5-1ubuntu0.3 [744 kB]
+Get:13 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libglx-dev amd64 1.4.0-1 [14.1 kB]
+Get:14 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libgl-dev amd64 1.4.0-1 [101 kB]
+Get:15 https://repo.huaweicloud.com/ubuntu jammy/main amd64 libegl-dev amd64 1.4.0-1 [18.0 kB]
+Get:16 https://repo.huaweicloud.com/ubuntu jammy-updates/universe amd64 libgl1-mesa-glx amd64 23.0.4-0ubuntu1~22.04.1 [5584 B]
+Get:17 https://repo.huaweicloud.com/ubuntu jammy/universe amd64 libglfw3 amd64 3.3.6-1 [83.2 kB]
+Get:18 https://repo.huaweicloud.com/ubuntu jammy/universe amd64 patchelf amd64 0.14.3-1 [72.1 kB]
+Get:19 https://repo.huaweicloud.com/ubuntu jammy-updates/main amd64 libosmesa6 amd64 23.2.1-1ubuntu3.1~22.04.3 [3115 kB]
+Get:20 https://repo.huaweicloud.com/ubuntu jammy-updates/main amd64 libosmesa6-dev amd64 23.2.1-1ubuntu3.1~22.04.3 [8984 B]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 5190 kB in 1s (9048 kB/s)
+Selecting previously unselected package libwayland-server0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 48259 files and directories currently installed.)
+Preparing to unpack .../00-libwayland-server0_1.20.0-1ubuntu0.1_amd64.deb ...
+Unpacking libwayland-server0:amd64 (1.20.0-1ubuntu0.1) ...
+Selecting previously unselected package libgbm1:amd64.
+Preparing to unpack .../01-libgbm1_23.2.1-1ubuntu3.1~22.04.3_amd64.deb ...
+Unpacking libgbm1:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Selecting previously unselected package libegl-mesa0:amd64.
+Preparing to unpack .../02-libegl-mesa0_23.2.1-1ubuntu3.1~22.04.3_amd64.deb ...
+Unpacking libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Selecting previously unselected package libegl1:amd64.
+Preparing to unpack .../03-libegl1_1.4.0-1_amd64.deb ...
+Unpacking libegl1:amd64 (1.4.0-1) ...
+Selecting previously unselected package xorg-sgml-doctools.
+Preparing to unpack .../04-xorg-sgml-doctools_1%3a1.11-1.1_all.deb ...
+Unpacking xorg-sgml-doctools (1:1.11-1.1) ...
+Selecting previously unselected package x11proto-dev.
+Preparing to unpack .../05-x11proto-dev_2021.5-1_all.deb ...
+Unpacking x11proto-dev (2021.5-1) ...
+Selecting previously unselected package libxau-dev:amd64.
+Preparing to unpack .../06-libxau-dev_1%3a1.0.9-1build5_amd64.deb ...
+Unpacking libxau-dev:amd64 (1:1.0.9-1build5) ...
+Selecting previously unselected package libxdmcp-dev:amd64.
+Preparing to unpack .../07-libxdmcp-dev_1%3a1.1.3-0ubuntu5_amd64.deb ...
+Unpacking libxdmcp-dev:amd64 (1:1.1.3-0ubuntu5) ...
+Selecting previously unselected package xtrans-dev.
+Preparing to unpack .../08-xtrans-dev_1.4.0-1_all.deb ...
+Unpacking xtrans-dev (1.4.0-1) ...
+Selecting previously unselected package libpthread-stubs0-dev:amd64.
+Preparing to unpack .../09-libpthread-stubs0-dev_0.4-1build2_amd64.deb ...
+Unpacking libpthread-stubs0-dev:amd64 (0.4-1build2) ...
+Selecting previously unselected package libxcb1-dev:amd64.
+Preparing to unpack .../10-libxcb1-dev_1.14-3ubuntu3_amd64.deb ...
+Unpacking libxcb1-dev:amd64 (1.14-3ubuntu3) ...
+Selecting previously unselected package libx11-dev:amd64.
+Preparing to unpack .../11-libx11-dev_2%3a1.7.5-1ubuntu0.3_amd64.deb ...
+Unpacking libx11-dev:amd64 (2:1.7.5-1ubuntu0.3) ...
+Selecting previously unselected package libglx-dev:amd64.
+Preparing to unpack .../12-libglx-dev_1.4.0-1_amd64.deb ...
+Unpacking libglx-dev:amd64 (1.4.0-1) ...
+Selecting previously unselected package libgl-dev:amd64.
+Preparing to unpack .../13-libgl-dev_1.4.0-1_amd64.deb ...
+Unpacking libgl-dev:amd64 (1.4.0-1) ...
+Selecting previously unselected package libegl-dev:amd64.
+Preparing to unpack .../14-libegl-dev_1.4.0-1_amd64.deb ...
+Unpacking libegl-dev:amd64 (1.4.0-1) ...
+Selecting previously unselected package libgl1-mesa-glx:amd64.
+Preparing to unpack .../15-libgl1-mesa-glx_23.0.4-0ubuntu1~22.04.1_amd64.deb ...
+Unpacking libgl1-mesa-glx:amd64 (23.0.4-0ubuntu1~22.04.1) ...
+Selecting previously unselected package libglfw3:amd64.
+Preparing to unpack .../16-libglfw3_3.3.6-1_amd64.deb ...
+Unpacking libglfw3:amd64 (3.3.6-1) ...
+Selecting previously unselected package patchelf.
+Preparing to unpack .../17-patchelf_0.14.3-1_amd64.deb ...
+Unpacking patchelf (0.14.3-1) ...
+Selecting previously unselected package libosmesa6:amd64.
+Preparing to unpack .../18-libosmesa6_23.2.1-1ubuntu3.1~22.04.3_amd64.deb ...
+Unpacking libosmesa6:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Selecting previously unselected package libosmesa6-dev:amd64.
+Preparing to unpack .../19-libosmesa6-dev_23.2.1-1ubuntu3.1~22.04.3_amd64.deb ...
+Unpacking libosmesa6-dev:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Setting up libglfw3:amd64 (3.3.6-1) ...
+Setting up libwayland-server0:amd64 (1.20.0-1ubuntu0.1) ...
+Setting up libgbm1:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Setting up libpthread-stubs0-dev:amd64 (0.4-1build2) ...
+Setting up xtrans-dev (1.4.0-1) ...
+Setting up libegl-mesa0:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Setting up libgl1-mesa-glx:amd64 (23.0.4-0ubuntu1~22.04.1) ...
+Setting up libegl1:amd64 (1.4.0-1) ...
+Setting up xorg-sgml-doctools (1:1.11-1.1) ...
+Setting up patchelf (0.14.3-1) ...
+Setting up libosmesa6:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Setting up x11proto-dev (2021.5-1) ...
+Setting up libxau-dev:amd64 (1:1.0.9-1build5) ...
+Setting up libxdmcp-dev:amd64 (1:1.1.3-0ubuntu5) ...
+Setting up libxcb1-dev:amd64 (1.14-3ubuntu3) ...
+Setting up libx11-dev:amd64 (2:1.7.5-1ubuntu0.3) ...
+Setting up libglx-dev:amd64 (1.4.0-1) ...
+Setting up libgl-dev:amd64 (1.4.0-1) ...
+Setting up libegl-dev:amd64 (1.4.0-1) ...
+Setting up libosmesa6-dev:amd64 (23.2.1-1ubuntu3.1~22.04.3) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libEGL_nvidia.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libGLESv1_CM_nvidia.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libGLESv2_nvidia.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libGLX_nvidia.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libcuda.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libcudadebugger.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvcuvid.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-allocator.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-cfg.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-egl-wayland.so.1.1.20 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-eglcore.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-encode.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-fbc.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-glcore.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-glsi.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-glvkspirv.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-gpucomp.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-gtk2.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-gtk3.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-ngx.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-nvvm.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-opencl.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-opticalflow.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11-openssl3.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-pkcs11.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-present.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-ptxjitcompiler.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-rtcore.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-sandboxutils.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-tileiras.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-tls.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-vksc-core.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-wayland-client.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvoptix.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libGLX_indirect.so.0 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-ngx.so.1 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-sandboxutils.so.1 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-sandboxutils.so is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-vksc-core.so.1 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/libnvidia-egl-wayland.so.1 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nvidia.so.590.44.01 is empty, not checked.
+/sbin/ldconfig.real: File /usr/lib/x86_64-linux-gnu/vdpau/libvdpau_nvidia.so.1 is empty, not checked.
+[DONE] 2026-04-11T05:44:51+08:00 apt install EGL/OSMesa deps
+	libglfw.so.3 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libglfw.so.3
+	libOSMesa.so.8 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libOSMesa.so.8
+	libOSMesa.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libOSMesa.so
+	libGL.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libGL.so.1
+	libGL.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libGL.so
+	libEGL.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libEGL.so.1
+	libEGL.so (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libEGL.so

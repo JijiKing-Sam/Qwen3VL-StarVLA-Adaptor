@@ -1,0 +1,428 @@
+{"episode_index": 0, "tasks": ["put the bowl on the plate"], "length": 112}
+{"episode_index": 1, "tasks": ["put the wine bottle on the rack"], "length": 155}
+{"episode_index": 2, "tasks": ["put the wine bottle on the rack"], "length": 150}
+{"episode_index": 3, "tasks": ["open the top drawer and put the bowl inside"], "length": 177}
+{"episode_index": 4, "tasks": ["open the top drawer and put the bowl inside"], "length": 218}
+{"episode_index": 5, "tasks": ["put the cream cheese in the bowl"], "length": 112}
+{"episode_index": 6, "tasks": ["put the wine bottle on top of the cabinet"], "length": 90}
+{"episode_index": 7, "tasks": ["push the plate to the front of the stove"], "length": 123}
+{"episode_index": 8, "tasks": ["open the top drawer and put the bowl inside"], "length": 270}
+{"episode_index": 9, "tasks": ["turn on the stove"], "length": 90}
+{"episode_index": 10, "tasks": ["put the wine bottle on top of the cabinet"], "length": 114}
+{"episode_index": 11, "tasks": ["turn on the stove"], "length": 81}
+{"episode_index": 12, "tasks": ["put the cream cheese in the bowl"], "length": 135}
+{"episode_index": 13, "tasks": ["put the bowl on the stove"], "length": 103}
+{"episode_index": 14, "tasks": ["put the cream cheese in the bowl"], "length": 92}
+{"episode_index": 15, "tasks": ["put the bowl on the stove"], "length": 111}
+{"episode_index": 16, "tasks": ["put the bowl on the stove"], "length": 104}
+{"episode_index": 17, "tasks": ["put the wine bottle on top of the cabinet"], "length": 113}
+{"episode_index": 18, "tasks": ["put the wine bottle on top of the cabinet"], "length": 101}
+{"episode_index": 19, "tasks": ["put the bowl on top of the cabinet"], "length": 100}
+{"episode_index": 20, "tasks": ["open the middle drawer of the cabinet"], "length": 136}
+{"episode_index": 21, "tasks": ["push the plate to the front of the stove"], "length": 138}
+{"episode_index": 22, "tasks": ["put the bowl on the stove"], "length": 104}
+{"episode_index": 23, "tasks": ["put the bowl on top of the cabinet"], "length": 110}
+{"episode_index": 24, "tasks": ["put the wine bottle on the rack"], "length": 177}
+{"episode_index": 25, "tasks": ["put the wine bottle on top of the cabinet"], "length": 116}
+{"episode_index": 26, "tasks": ["open the middle drawer of the cabinet"], "length": 138}
+{"episode_index": 27, "tasks": ["turn on the stove"], "length": 84}
+{"episode_index": 28, "tasks": ["put the wine bottle on the rack"], "length": 170}
+{"episode_index": 29, "tasks": ["put the wine bottle on the rack"], "length": 184}
+{"episode_index": 30, "tasks": ["open the top drawer and put the bowl inside"], "length": 185}
+{"episode_index": 31, "tasks": ["open the middle drawer of the cabinet"], "length": 131}
+{"episode_index": 32, "tasks": ["push the plate to the front of the stove"], "length": 193}
+{"episode_index": 33, "tasks": ["turn on the stove"], "length": 119}
+{"episode_index": 34, "tasks": ["put the cream cheese in the bowl"], "length": 107}
+{"episode_index": 35, "tasks": ["open the top drawer and put the bowl inside"], "length": 202}
+{"episode_index": 36, "tasks": ["put the bowl on the stove"], "length": 94}
+{"episode_index": 37, "tasks": ["open the top drawer and put the bowl inside"], "length": 199}
+{"episode_index": 38, "tasks": ["put the wine bottle on top of the cabinet"], "length": 93}
+{"episode_index": 39, "tasks": ["turn on the stove"], "length": 97}
+{"episode_index": 40, "tasks": ["put the wine bottle on top of the cabinet"], "length": 99}
+{"episode_index": 41, "tasks": ["push the plate to the front of the stove"], "length": 142}
+{"episode_index": 42, "tasks": ["open the middle drawer of the cabinet"], "length": 136}
+{"episode_index": 43, "tasks": ["put the bowl on the plate"], "length": 87}
+{"episode_index": 44, "tasks": ["put the wine bottle on top of the cabinet"], "length": 100}
+{"episode_index": 45, "tasks": ["put the bowl on the stove"], "length": 91}
+{"episode_index": 46, "tasks": ["push the plate to the front of the stove"], "length": 154}
+{"episode_index": 47, "tasks": ["put the bowl on the plate"], "length": 103}
+{"episode_index": 48, "tasks": ["put the wine bottle on top of the cabinet"], "length": 101}
+{"episode_index": 49, "tasks": ["put the wine bottle on the rack"], "length": 156}
+{"episode_index": 50, "tasks": ["put the wine bottle on the rack"], "length": 184}
+{"episode_index": 51, "tasks": ["put the wine bottle on top of the cabinet"], "length": 99}
+{"episode_index": 52, "tasks": ["put the bowl on the plate"], "length": 106}
+{"episode_index": 53, "tasks": ["put the wine bottle on top of the cabinet"], "length": 104}
+{"episode_index": 54, "tasks": ["put the bowl on the plate"], "length": 105}
+{"episode_index": 55, "tasks": ["put the cream cheese in the bowl"], "length": 106}
+{"episode_index": 56, "tasks": ["turn on the stove"], "length": 100}
+{"episode_index": 57, "tasks": ["put the wine bottle on top of the cabinet"], "length": 105}
+{"episode_index": 58, "tasks": ["open the middle drawer of the cabinet"], "length": 141}
+{"episode_index": 59, "tasks": ["put the bowl on top of the cabinet"], "length": 86}
+{"episode_index": 60, "tasks": ["put the cream cheese in the bowl"], "length": 96}
+{"episode_index": 61, "tasks": ["turn on the stove"], "length": 85}
+{"episode_index": 62, "tasks": ["turn on the stove"], "length": 77}
+{"episode_index": 63, "tasks": ["push the plate to the front of the stove"], "length": 143}
+{"episode_index": 64, "tasks": ["open the middle drawer of the cabinet"], "length": 143}
+{"episode_index": 65, "tasks": ["put the bowl on top of the cabinet"], "length": 96}
+{"episode_index": 66, "tasks": ["put the bowl on the stove"], "length": 99}
+{"episode_index": 67, "tasks": ["put the bowl on top of the cabinet"], "length": 100}
+{"episode_index": 68, "tasks": ["put the bowl on the plate"], "length": 90}
+{"episode_index": 69, "tasks": ["put the bowl on the plate"], "length": 92}
+{"episode_index": 70, "tasks": ["open the top drawer and put the bowl inside"], "length": 249}
+{"episode_index": 71, "tasks": ["turn on the stove"], "length": 92}
+{"episode_index": 72, "tasks": ["put the bowl on the plate"], "length": 90}
+{"episode_index": 73, "tasks": ["put the bowl on top of the cabinet"], "length": 93}
+{"episode_index": 74, "tasks": ["turn on the stove"], "length": 85}
+{"episode_index": 75, "tasks": ["put the wine bottle on top of the cabinet"], "length": 116}
+{"episode_index": 76, "tasks": ["put the bowl on the stove"], "length": 95}
+{"episode_index": 77, "tasks": ["put the bowl on top of the cabinet"], "length": 98}
+{"episode_index": 78, "tasks": ["put the cream cheese in the bowl"], "length": 105}
+{"episode_index": 79, "tasks": ["put the bowl on top of the cabinet"], "length": 91}
+{"episode_index": 80, "tasks": ["put the bowl on the plate"], "length": 84}
+{"episode_index": 81, "tasks": ["turn on the stove"], "length": 96}
+{"episode_index": 82, "tasks": ["push the plate to the front of the stove"], "length": 129}
+{"episode_index": 83, "tasks": ["open the top drawer and put the bowl inside"], "length": 199}
+{"episode_index": 84, "tasks": ["open the middle drawer of the cabinet"], "length": 143}
+{"episode_index": 85, "tasks": ["put the cream cheese in the bowl"], "length": 90}
+{"episode_index": 86, "tasks": ["open the top drawer and put the bowl inside"], "length": 227}
+{"episode_index": 87, "tasks": ["put the bowl on the plate"], "length": 93}
+{"episode_index": 88, "tasks": ["put the wine bottle on the rack"], "length": 167}
+{"episode_index": 89, "tasks": ["put the wine bottle on top of the cabinet"], "length": 92}
+{"episode_index": 90, "tasks": ["open the middle drawer of the cabinet"], "length": 140}
+{"episode_index": 91, "tasks": ["put the wine bottle on top of the cabinet"], "length": 107}
+{"episode_index": 92, "tasks": ["push the plate to the front of the stove"], "length": 169}
+{"episode_index": 93, "tasks": ["push the plate to the front of the stove"], "length": 125}
+{"episode_index": 94, "tasks": ["open the middle drawer of the cabinet"], "length": 127}
+{"episode_index": 95, "tasks": ["put the bowl on top of the cabinet"], "length": 103}
+{"episode_index": 96, "tasks": ["put the wine bottle on top of the cabinet"], "length": 92}
+{"episode_index": 97, "tasks": ["put the wine bottle on top of the cabinet"], "length": 97}
+{"episode_index": 98, "tasks": ["turn on the stove"], "length": 94}
+{"episode_index": 99, "tasks": ["push the plate to the front of the stove"], "length": 136}
+{"episode_index": 100, "tasks": ["put the wine bottle on top of the cabinet"], "length": 87}
+{"episode_index": 101, "tasks": ["put the wine bottle on top of the cabinet"], "length": 109}
+{"episode_index": 102, "tasks": ["put the bowl on the plate"], "length": 91}
+{"episode_index": 103, "tasks": ["put the wine bottle on top of the cabinet"], "length": 92}
+{"episode_index": 104, "tasks": ["put the bowl on the plate"], "length": 89}
+{"episode_index": 105, "tasks": ["put the wine bottle on the rack"], "length": 164}
+{"episode_index": 106, "tasks": ["put the wine bottle on the rack"], "length": 199}
+{"episode_index": 107, "tasks": ["turn on the stove"], "length": 87}
+{"episode_index": 108, "tasks": ["turn on the stove"], "length": 88}
+{"episode_index": 109, "tasks": ["put the bowl on the plate"], "length": 94}
+{"episode_index": 110, "tasks": ["open the top drawer and put the bowl inside"], "length": 195}
+{"episode_index": 111, "tasks": ["open the middle drawer of the cabinet"], "length": 124}
+{"episode_index": 112, "tasks": ["put the cream cheese in the bowl"], "length": 96}
+{"episode_index": 113, "tasks": ["put the cream cheese in the bowl"], "length": 86}
+{"episode_index": 114, "tasks": ["put the bowl on top of the cabinet"], "length": 97}
+{"episode_index": 115, "tasks": ["open the top drawer and put the bowl inside"], "length": 199}
+{"episode_index": 116, "tasks": ["put the bowl on the stove"], "length": 92}
+{"episode_index": 117, "tasks": ["open the middle drawer of the cabinet"], "length": 128}
+{"episode_index": 118, "tasks": ["open the middle drawer of the cabinet"], "length": 128}
+{"episode_index": 119, "tasks": ["open the top drawer and put the bowl inside"], "length": 190}
+{"episode_index": 120, "tasks": ["turn on the stove"], "length": 93}
+{"episode_index": 121, "tasks": ["put the bowl on the stove"], "length": 92}
+{"episode_index": 122, "tasks": ["put the bowl on top of the cabinet"], "length": 96}
+{"episode_index": 123, "tasks": ["put the wine bottle on the rack"], "length": 170}
+{"episode_index": 124, "tasks": ["put the wine bottle on the rack"], "length": 204}
+{"episode_index": 125, "tasks": ["turn on the stove"], "length": 75}
+{"episode_index": 126, "tasks": ["put the bowl on top of the cabinet"], "length": 99}
+{"episode_index": 127, "tasks": ["push the plate to the front of the stove"], "length": 132}
+{"episode_index": 128, "tasks": ["put the bowl on the plate"], "length": 103}
+{"episode_index": 129, "tasks": ["put the cream cheese in the bowl"], "length": 103}
+{"episode_index": 130, "tasks": ["put the wine bottle on the rack"], "length": 164}
+{"episode_index": 131, "tasks": ["put the cream cheese in the bowl"], "length": 113}
+{"episode_index": 132, "tasks": ["put the bowl on the plate"], "length": 90}
+{"episode_index": 133, "tasks": ["put the wine bottle on top of the cabinet"], "length": 102}
+{"episode_index": 134, "tasks": ["put the bowl on the plate"], "length": 79}
+{"episode_index": 135, "tasks": ["put the bowl on top of the cabinet"], "length": 103}
+{"episode_index": 136, "tasks": ["put the wine bottle on top of the cabinet"], "length": 146}
+{"episode_index": 137, "tasks": ["open the middle drawer of the cabinet"], "length": 137}
+{"episode_index": 138, "tasks": ["put the wine bottle on the rack"], "length": 169}
+{"episode_index": 139, "tasks": ["put the cream cheese in the bowl"], "length": 109}
+{"episode_index": 140, "tasks": ["open the middle drawer of the cabinet"], "length": 187}
+{"episode_index": 141, "tasks": ["turn on the stove"], "length": 79}
+{"episode_index": 142, "tasks": ["put the bowl on top of the cabinet"], "length": 102}
+{"episode_index": 143, "tasks": ["put the bowl on the plate"], "length": 84}
+{"episode_index": 144, "tasks": ["open the top drawer and put the bowl inside"], "length": 202}
+{"episode_index": 145, "tasks": ["put the bowl on the stove"], "length": 102}
+{"episode_index": 146, "tasks": ["open the middle drawer of the cabinet"], "length": 146}
+{"episode_index": 147, "tasks": ["open the top drawer and put the bowl inside"], "length": 178}
+{"episode_index": 148, "tasks": ["put the cream cheese in the bowl"], "length": 103}
+{"episode_index": 149, "tasks": ["put the wine bottle on top of the cabinet"], "length": 93}
+{"episode_index": 150, "tasks": ["turn on the stove"], "length": 88}
+{"episode_index": 151, "tasks": ["put the bowl on the stove"], "length": 106}
+{"episode_index": 152, "tasks": ["turn on the stove"], "length": 96}
+{"episode_index": 153, "tasks": ["put the bowl on the plate"], "length": 88}
+{"episode_index": 154, "tasks": ["put the wine bottle on top of the cabinet"], "length": 113}
+{"episode_index": 155, "tasks": ["open the top drawer and put the bowl inside"], "length": 188}
+{"episode_index": 156, "tasks": ["push the plate to the front of the stove"], "length": 220}
+{"episode_index": 157, "tasks": ["put the cream cheese in the bowl"], "length": 85}
+{"episode_index": 158, "tasks": ["put the bowl on the plate"], "length": 126}
+{"episode_index": 159, "tasks": ["open the top drawer and put the bowl inside"], "length": 221}
+{"episode_index": 160, "tasks": ["put the wine bottle on the rack"], "length": 179}
+{"episode_index": 161, "tasks": ["put the cream cheese in the bowl"], "length": 107}
+{"episode_index": 162, "tasks": ["open the middle drawer of the cabinet"], "length": 150}
+{"episode_index": 163, "tasks": ["put the wine bottle on the rack"], "length": 196}
+{"episode_index": 164, "tasks": ["put the wine bottle on top of the cabinet"], "length": 123}
+{"episode_index": 165, "tasks": ["put the bowl on the stove"], "length": 102}
+{"episode_index": 166, "tasks": ["put the bowl on the stove"], "length": 98}
+{"episode_index": 167, "tasks": ["put the wine bottle on top of the cabinet"], "length": 100}
+{"episode_index": 168, "tasks": ["open the middle drawer of the cabinet"], "length": 136}
+{"episode_index": 169, "tasks": ["open the top drawer and put the bowl inside"], "length": 186}
+{"episode_index": 170, "tasks": ["put the bowl on the plate"], "length": 103}
+{"episode_index": 171, "tasks": ["put the bowl on the stove"], "length": 99}
+{"episode_index": 172, "tasks": ["put the bowl on the plate"], "length": 80}
+{"episode_index": 173, "tasks": ["open the middle drawer of the cabinet"], "length": 140}
+{"episode_index": 174, "tasks": ["push the plate to the front of the stove"], "length": 144}
+{"episode_index": 175, "tasks": ["put the wine bottle on top of the cabinet"], "length": 127}
+{"episode_index": 176, "tasks": ["put the wine bottle on top of the cabinet"], "length": 130}
+{"episode_index": 177, "tasks": ["put the wine bottle on top of the cabinet"], "length": 93}
+{"episode_index": 178, "tasks": ["put the bowl on the stove"], "length": 112}
+{"episode_index": 179, "tasks": ["put the bowl on the stove"], "length": 91}
+{"episode_index": 180, "tasks": ["open the top drawer and put the bowl inside"], "length": 182}
+{"episode_index": 181, "tasks": ["open the top drawer and put the bowl inside"], "length": 184}
+{"episode_index": 182, "tasks": ["open the middle drawer of the cabinet"], "length": 151}
+{"episode_index": 183, "tasks": ["put the cream cheese in the bowl"], "length": 136}
+{"episode_index": 184, "tasks": ["put the bowl on the plate"], "length": 98}
+{"episode_index": 185, "tasks": ["put the cream cheese in the bowl"], "length": 99}
+{"episode_index": 186, "tasks": ["put the bowl on the stove"], "length": 92}
+{"episode_index": 187, "tasks": ["open the middle drawer of the cabinet"], "length": 127}
+{"episode_index": 188, "tasks": ["turn on the stove"], "length": 86}
+{"episode_index": 189, "tasks": ["put the bowl on the plate"], "length": 104}
+{"episode_index": 190, "tasks": ["turn on the stove"], "length": 77}
+{"episode_index": 191, "tasks": ["put the bowl on top of the cabinet"], "length": 98}
+{"episode_index": 192, "tasks": ["put the wine bottle on the rack"], "length": 155}
+{"episode_index": 193, "tasks": ["turn on the stove"], "length": 95}
+{"episode_index": 194, "tasks": ["put the bowl on top of the cabinet"], "length": 91}
+{"episode_index": 195, "tasks": ["put the wine bottle on top of the cabinet"], "length": 104}
+{"episode_index": 196, "tasks": ["turn on the stove"], "length": 77}
+{"episode_index": 197, "tasks": ["open the top drawer and put the bowl inside"], "length": 170}
+{"episode_index": 198, "tasks": ["open the middle drawer of the cabinet"], "length": 138}
+{"episode_index": 199, "tasks": ["turn on the stove"], "length": 82}
+{"episode_index": 200, "tasks": ["put the wine bottle on the rack"], "length": 172}
+{"episode_index": 201, "tasks": ["put the bowl on the stove"], "length": 91}
+{"episode_index": 202, "tasks": ["put the cream cheese in the bowl"], "length": 95}
+{"episode_index": 203, "tasks": ["put the bowl on the plate"], "length": 80}
+{"episode_index": 204, "tasks": ["put the wine bottle on the rack"], "length": 160}
+{"episode_index": 205, "tasks": ["push the plate to the front of the stove"], "length": 155}
+{"episode_index": 206, "tasks": ["open the middle drawer of the cabinet"], "length": 130}
+{"episode_index": 207, "tasks": ["put the wine bottle on the rack"], "length": 153}
+{"episode_index": 208, "tasks": ["put the cream cheese in the bowl"], "length": 95}
+{"episode_index": 209, "tasks": ["put the wine bottle on top of the cabinet"], "length": 92}
+{"episode_index": 210, "tasks": ["push the plate to the front of the stove"], "length": 147}
+{"episode_index": 211, "tasks": ["put the bowl on top of the cabinet"], "length": 90}
+{"episode_index": 212, "tasks": ["put the wine bottle on top of the cabinet"], "length": 128}
+{"episode_index": 213, "tasks": ["put the wine bottle on top of the cabinet"], "length": 100}
+{"episode_index": 214, "tasks": ["push the plate to the front of the stove"], "length": 167}
+{"episode_index": 215, "tasks": ["open the top drawer and put the bowl inside"], "length": 178}
+{"episode_index": 216, "tasks": ["put the wine bottle on the rack"], "length": 170}
+{"episode_index": 217, "tasks": ["put the wine bottle on top of the cabinet"], "length": 100}
+{"episode_index": 218, "tasks": ["put the bowl on top of the cabinet"], "length": 90}
+{"episode_index": 219, "tasks": ["put the bowl on the stove"], "length": 99}
+{"episode_index": 220, "tasks": ["open the middle drawer of the cabinet"], "length": 138}
+{"episode_index": 221, "tasks": ["put the cream cheese in the bowl"], "length": 102}
+{"episode_index": 222, "tasks": ["put the bowl on top of the cabinet"], "length": 120}
+{"episode_index": 223, "tasks": ["turn on the stove"], "length": 85}
+{"episode_index": 224, "tasks": ["push the plate to the front of the stove"], "length": 188}
+{"episode_index": 225, "tasks": ["put the bowl on the stove"], "length": 106}
+{"episode_index": 226, "tasks": ["turn on the stove"], "length": 93}
+{"episode_index": 227, "tasks": ["push the plate to the front of the stove"], "length": 126}
+{"episode_index": 228, "tasks": ["put the bowl on the plate"], "length": 103}
+{"episode_index": 229, "tasks": ["put the bowl on top of the cabinet"], "length": 104}
+{"episode_index": 230, "tasks": ["turn on the stove"], "length": 90}
+{"episode_index": 231, "tasks": ["put the cream cheese in the bowl"], "length": 95}
+{"episode_index": 232, "tasks": ["open the middle drawer of the cabinet"], "length": 126}
+{"episode_index": 233, "tasks": ["put the bowl on the stove"], "length": 107}
+{"episode_index": 234, "tasks": ["turn on the stove"], "length": 90}
+{"episode_index": 235, "tasks": ["open the top drawer and put the bowl inside"], "length": 176}
+{"episode_index": 236, "tasks": ["put the bowl on the plate"], "length": 79}
+{"episode_index": 237, "tasks": ["put the bowl on the stove"], "length": 96}
+{"episode_index": 238, "tasks": ["turn on the stove"], "length": 96}
+{"episode_index": 239, "tasks": ["put the bowl on the stove"], "length": 94}
+{"episode_index": 240, "tasks": ["put the wine bottle on top of the cabinet"], "length": 104}
+{"episode_index": 241, "tasks": ["put the bowl on the plate"], "length": 84}
+{"episode_index": 242, "tasks": ["put the bowl on the plate"], "length": 92}
+{"episode_index": 243, "tasks": ["turn on the stove"], "length": 85}
+{"episode_index": 244, "tasks": ["put the wine bottle on the rack"], "length": 149}
+{"episode_index": 245, "tasks": ["open the top drawer and put the bowl inside"], "length": 183}
+{"episode_index": 246, "tasks": ["put the wine bottle on the rack"], "length": 182}
+{"episode_index": 247, "tasks": ["put the bowl on the plate"], "length": 90}
+{"episode_index": 248, "tasks": ["open the top drawer and put the bowl inside"], "length": 184}
+{"episode_index": 249, "tasks": ["turn on the stove"], "length": 92}
+{"episode_index": 250, "tasks": ["put the bowl on the stove"], "length": 99}
+{"episode_index": 251, "tasks": ["put the bowl on top of the cabinet"], "length": 99}
+{"episode_index": 252, "tasks": ["open the middle drawer of the cabinet"], "length": 142}
+{"episode_index": 253, "tasks": ["put the cream cheese in the bowl"], "length": 131}
+{"episode_index": 254, "tasks": ["open the middle drawer of the cabinet"], "length": 153}
+{"episode_index": 255, "tasks": ["put the bowl on the plate"], "length": 95}
+{"episode_index": 256, "tasks": ["put the wine bottle on top of the cabinet"], "length": 120}
+{"episode_index": 257, "tasks": ["put the bowl on top of the cabinet"], "length": 97}
+{"episode_index": 258, "tasks": ["put the bowl on the stove"], "length": 99}
+{"episode_index": 259, "tasks": ["put the bowl on top of the cabinet"], "length": 96}
+{"episode_index": 260, "tasks": ["put the bowl on the plate"], "length": 107}
+{"episode_index": 261, "tasks": ["turn on the stove"], "length": 81}
+{"episode_index": 262, "tasks": ["put the bowl on the stove"], "length": 119}
+{"episode_index": 263, "tasks": ["put the bowl on the plate"], "length": 90}
+{"episode_index": 264, "tasks": ["put the bowl on the stove"], "length": 93}
+{"episode_index": 265, "tasks": ["put the cream cheese in the bowl"], "length": 104}
+{"episode_index": 266, "tasks": ["put the wine bottle on top of the cabinet"], "length": 90}
+{"episode_index": 267, "tasks": ["put the bowl on the plate"], "length": 106}
+{"episode_index": 268, "tasks": ["push the plate to the front of the stove"], "length": 134}
+{"episode_index": 269, "tasks": ["put the wine bottle on top of the cabinet"], "length": 129}
+{"episode_index": 270, "tasks": ["put the bowl on the stove"], "length": 92}
+{"episode_index": 271, "tasks": ["put the cream cheese in the bowl"], "length": 147}
+{"episode_index": 272, "tasks": ["put the wine bottle on the rack"], "length": 201}
+{"episode_index": 273, "tasks": ["put the wine bottle on the rack"], "length": 177}
+{"episode_index": 274, "tasks": ["put the bowl on the plate"], "length": 89}
+{"episode_index": 275, "tasks": ["turn on the stove"], "length": 79}
+{"episode_index": 276, "tasks": ["put the bowl on the plate"], "length": 87}
+{"episode_index": 277, "tasks": ["put the wine bottle on top of the cabinet"], "length": 105}
+{"episode_index": 278, "tasks": ["put the cream cheese in the bowl"], "length": 96}
+{"episode_index": 279, "tasks": ["turn on the stove"], "length": 86}
+{"episode_index": 280, "tasks": ["open the middle drawer of the cabinet"], "length": 136}
+{"episode_index": 281, "tasks": ["put the bowl on top of the cabinet"], "length": 90}
+{"episode_index": 282, "tasks": ["put the bowl on top of the cabinet"], "length": 105}
+{"episode_index": 283, "tasks": ["put the bowl on top of the cabinet"], "length": 98}
+{"episode_index": 284, "tasks": ["push the plate to the front of the stove"], "length": 136}
+{"episode_index": 285, "tasks": ["open the middle drawer of the cabinet"], "length": 139}
+{"episode_index": 286, "tasks": ["put the bowl on top of the cabinet"], "length": 95}
+{"episode_index": 287, "tasks": ["put the wine bottle on the rack"], "length": 167}
+{"episode_index": 288, "tasks": ["put the wine bottle on the rack"], "length": 254}
+{"episode_index": 289, "tasks": ["put the wine bottle on top of the cabinet"], "length": 107}
+{"episode_index": 290, "tasks": ["put the bowl on top of the cabinet"], "length": 88}
+{"episode_index": 291, "tasks": ["put the bowl on the plate"], "length": 95}
+{"episode_index": 292, "tasks": ["put the wine bottle on the rack"], "length": 152}
+{"episode_index": 293, "tasks": ["open the middle drawer of the cabinet"], "length": 196}
+{"episode_index": 294, "tasks": ["put the bowl on the stove"], "length": 123}
+{"episode_index": 295, "tasks": ["put the bowl on top of the cabinet"], "length": 96}
+{"episode_index": 296, "tasks": ["put the wine bottle on the rack"], "length": 216}
+{"episode_index": 297, "tasks": ["put the bowl on the stove"], "length": 104}
+{"episode_index": 298, "tasks": ["put the cream cheese in the bowl"], "length": 112}
+{"episode_index": 299, "tasks": ["open the middle drawer of the cabinet"], "length": 116}
+{"episode_index": 300, "tasks": ["put the bowl on the plate"], "length": 96}
+{"episode_index": 301, "tasks": ["push the plate to the front of the stove"], "length": 178}
+{"episode_index": 302, "tasks": ["put the bowl on top of the cabinet"], "length": 91}
+{"episode_index": 303, "tasks": ["put the wine bottle on top of the cabinet"], "length": 100}
+{"episode_index": 304, "tasks": ["put the wine bottle on the rack"], "length": 158}
+{"episode_index": 305, "tasks": ["open the top drawer and put the bowl inside"], "length": 184}
+{"episode_index": 306, "tasks": ["push the plate to the front of the stove"], "length": 142}
+{"episode_index": 307, "tasks": ["put the wine bottle on top of the cabinet"], "length": 106}
+{"episode_index": 308, "tasks": ["open the middle drawer of the cabinet"], "length": 128}
+{"episode_index": 309, "tasks": ["put the bowl on the stove"], "length": 114}
+{"episode_index": 310, "tasks": ["put the bowl on top of the cabinet"], "length": 109}
+{"episode_index": 311, "tasks": ["turn on the stove"], "length": 99}
+{"episode_index": 312, "tasks": ["put the bowl on the stove"], "length": 97}
+{"episode_index": 313, "tasks": ["put the bowl on the stove"], "length": 96}
+{"episode_index": 314, "tasks": ["open the middle drawer of the cabinet"], "length": 185}
+{"episode_index": 315, "tasks": ["open the top drawer and put the bowl inside"], "length": 173}
+{"episode_index": 316, "tasks": ["put the wine bottle on the rack"], "length": 152}
+{"episode_index": 317, "tasks": ["put the bowl on top of the cabinet"], "length": 104}
+{"episode_index": 318, "tasks": ["put the wine bottle on top of the cabinet"], "length": 122}
+{"episode_index": 319, "tasks": ["put the cream cheese in the bowl"], "length": 98}
+{"episode_index": 320, "tasks": ["put the bowl on top of the cabinet"], "length": 97}
+{"episode_index": 321, "tasks": ["turn on the stove"], "length": 91}
+{"episode_index": 322, "tasks": ["open the top drawer and put the bowl inside"], "length": 198}
+{"episode_index": 323, "tasks": ["put the bowl on top of the cabinet"], "length": 106}
+{"episode_index": 324, "tasks": ["open the middle drawer of the cabinet"], "length": 139}
+{"episode_index": 325, "tasks": ["put the bowl on the stove"], "length": 98}
+{"episode_index": 326, "tasks": ["turn on the stove"], "length": 103}
+{"episode_index": 327, "tasks": ["put the bowl on top of the cabinet"], "length": 123}
+{"episode_index": 328, "tasks": ["put the bowl on the stove"], "length": 104}
+{"episode_index": 329, "tasks": ["put the bowl on the plate"], "length": 88}
+{"episode_index": 330, "tasks": ["put the cream cheese in the bowl"], "length": 99}
+{"episode_index": 331, "tasks": ["push the plate to the front of the stove"], "length": 145}
+{"episode_index": 332, "tasks": ["open the top drawer and put the bowl inside"], "length": 251}
+{"episode_index": 333, "tasks": ["put the bowl on top of the cabinet"], "length": 87}
+{"episode_index": 334, "tasks": ["push the plate to the front of the stove"], "length": 139}
+{"episode_index": 335, "tasks": ["put the cream cheese in the bowl"], "length": 113}
+{"episode_index": 336, "tasks": ["push the plate to the front of the stove"], "length": 141}
+{"episode_index": 337, "tasks": ["put the bowl on the plate"], "length": 89}
+{"episode_index": 338, "tasks": ["turn on the stove"], "length": 86}
+{"episode_index": 339, "tasks": ["put the bowl on the plate"], "length": 93}
+{"episode_index": 340, "tasks": ["put the wine bottle on the rack"], "length": 189}
+{"episode_index": 341, "tasks": ["put the cream cheese in the bowl"], "length": 103}
+{"episode_index": 342, "tasks": ["put the bowl on the stove"], "length": 102}
+{"episode_index": 343, "tasks": ["open the middle drawer of the cabinet"], "length": 128}
+{"episode_index": 344, "tasks": ["turn on the stove"], "length": 80}
+{"episode_index": 345, "tasks": ["put the bowl on top of the cabinet"], "length": 101}
+{"episode_index": 346, "tasks": ["open the middle drawer of the cabinet"], "length": 129}
+{"episode_index": 347, "tasks": ["put the bowl on the plate"], "length": 89}
+{"episode_index": 348, "tasks": ["put the bowl on the plate"], "length": 87}
+{"episode_index": 349, "tasks": ["turn on the stove"], "length": 92}
+{"episode_index": 350, "tasks": ["turn on the stove"], "length": 92}
+{"episode_index": 351, "tasks": ["put the cream cheese in the bowl"], "length": 104}
+{"episode_index": 352, "tasks": ["put the bowl on top of the cabinet"], "length": 112}
+{"episode_index": 353, "tasks": ["put the bowl on top of the cabinet"], "length": 98}
+{"episode_index": 354, "tasks": ["push the plate to the front of the stove"], "length": 163}
+{"episode_index": 355, "tasks": ["open the middle drawer of the cabinet"], "length": 156}
+{"episode_index": 356, "tasks": ["put the wine bottle on top of the cabinet"], "length": 116}
+{"episode_index": 357, "tasks": ["turn on the stove"], "length": 88}
+{"episode_index": 358, "tasks": ["open the top drawer and put the bowl inside"], "length": 194}
+{"episode_index": 359, "tasks": ["open the top drawer and put the bowl inside"], "length": 219}
+{"episode_index": 360, "tasks": ["put the wine bottle on the rack"], "length": 155}
+{"episode_index": 361, "tasks": ["put the bowl on the stove"], "length": 115}
+{"episode_index": 362, "tasks": ["put the bowl on the stove"], "length": 114}
+{"episode_index": 363, "tasks": ["open the top drawer and put the bowl inside"], "length": 187}
+{"episode_index": 364, "tasks": ["put the bowl on top of the cabinet"], "length": 99}
+{"episode_index": 365, "tasks": ["push the plate to the front of the stove"], "length": 146}
+{"episode_index": 366, "tasks": ["put the bowl on top of the cabinet"], "length": 105}
+{"episode_index": 367, "tasks": ["turn on the stove"], "length": 89}
+{"episode_index": 368, "tasks": ["put the bowl on the stove"], "length": 94}
+{"episode_index": 369, "tasks": ["put the cream cheese in the bowl"], "length": 92}
+{"episode_index": 370, "tasks": ["put the bowl on the plate"], "length": 83}
+{"episode_index": 371, "tasks": ["put the bowl on the plate"], "length": 86}
+{"episode_index": 372, "tasks": ["put the bowl on the stove"], "length": 108}
+{"episode_index": 373, "tasks": ["push the plate to the front of the stove"], "length": 215}
+{"episode_index": 374, "tasks": ["turn on the stove"], "length": 89}
+{"episode_index": 375, "tasks": ["open the middle drawer of the cabinet"], "length": 125}
+{"episode_index": 376, "tasks": ["push the plate to the front of the stove"], "length": 117}
+{"episode_index": 377, "tasks": ["put the cream cheese in the bowl"], "length": 106}
+{"episode_index": 378, "tasks": ["put the wine bottle on the rack"], "length": 148}
+{"episode_index": 379, "tasks": ["open the top drawer and put the bowl inside"], "length": 209}
+{"episode_index": 380, "tasks": ["turn on the stove"], "length": 96}
+{"episode_index": 381, "tasks": ["put the cream cheese in the bowl"], "length": 110}
+{"episode_index": 382, "tasks": ["push the plate to the front of the stove"], "length": 175}
+{"episode_index": 383, "tasks": ["open the top drawer and put the bowl inside"], "length": 202}
+{"episode_index": 384, "tasks": ["put the bowl on the stove"], "length": 102}
+{"episode_index": 385, "tasks": ["put the bowl on the stove"], "length": 101}
+{"episode_index": 386, "tasks": ["open the middle drawer of the cabinet"], "length": 128}
+{"episode_index": 387, "tasks": ["put the wine bottle on top of the cabinet"], "length": 121}
+{"episode_index": 388, "tasks": ["put the bowl on top of the cabinet"], "length": 105}
+{"episode_index": 389, "tasks": ["put the bowl on the plate"], "length": 88}
+{"episode_index": 390, "tasks": ["push the plate to the front of the stove"], "length": 149}
+{"episode_index": 391, "tasks": ["put the bowl on the plate"], "length": 95}
+{"episode_index": 392, "tasks": ["put the cream cheese in the bowl"], "length": 110}
+{"episode_index": 393, "tasks": ["open the middle drawer of the cabinet"], "length": 133}
+{"episode_index": 394, "tasks": ["put the wine bottle on the rack"], "length": 153}
+{"episode_index": 395, "tasks": ["turn on the stove"], "length": 95}
+{"episode_index": 396, "tasks": ["put the bowl on top of the cabinet"], "length": 93}
+{"episode_index": 397, "tasks": ["put the cream cheese in the bowl"], "length": 96}
+{"episode_index": 398, "tasks": ["put the cream cheese in the bowl"], "length": 95}
+{"episode_index": 399, "tasks": ["push the plate to the front of the stove"], "length": 154}
+{"episode_index": 400, "tasks": ["open the middle drawer of the cabinet"], "length": 126}
+{"episode_index": 401, "tasks": ["open the middle drawer of the cabinet"], "length": 121}
+{"episode_index": 402, "tasks": ["push the plate to the front of the stove"], "length": 125}
+{"episode_index": 403, "tasks": ["open the top drawer and put the bowl inside"], "length": 215}
+{"episode_index": 404, "tasks": ["turn on the stove"], "length": 86}
+{"episode_index": 405, "tasks": ["open the top drawer and put the bowl inside"], "length": 196}
+{"episode_index": 406, "tasks": ["turn on the stove"], "length": 93}
+{"episode_index": 407, "tasks": ["put the bowl on the stove"], "length": 114}
+{"episode_index": 408, "tasks": ["put the cream cheese in the bowl"], "length": 111}
+{"episode_index": 409, "tasks": ["put the wine bottle on top of the cabinet"], "length": 92}
+{"episode_index": 410, "tasks": ["put the bowl on the stove"], "length": 103}
+{"episode_index": 411, "tasks": ["open the top drawer and put the bowl inside"], "length": 187}
+{"episode_index": 412, "tasks": ["put the bowl on top of the cabinet"], "length": 102}
+{"episode_index": 413, "tasks": ["open the middle drawer of the cabinet"], "length": 158}
+{"episode_index": 414, "tasks": ["put the bowl on top of the cabinet"], "length": 103}
+{"episode_index": 415, "tasks": ["put the bowl on top of the cabinet"], "length": 108}
+{"episode_index": 416, "tasks": ["put the wine bottle on top of the cabinet"], "length": 114}
+{"episode_index": 417, "tasks": ["put the bowl on the stove"], "length": 98}
+{"episode_index": 418, "tasks": ["put the cream cheese in the bowl"], "length": 109}
+{"episode_index": 419, "tasks": ["put the wine bottle on the rack"], "length": 173}
+{"episode_index": 420, "tasks": ["turn on the stove"], "length": 96}
+{"episode_index": 421, "tasks": ["turn on the stove"], "length": 79}
+{"episode_index": 422, "tasks": ["put the bowl on the plate"], "length": 92}
+{"episode_index": 423, "tasks": ["open the middle drawer of the cabinet"], "length": 160}
+{"episode_index": 424, "tasks": ["put the bowl on the plate"], "length": 97}
+{"episode_index": 425, "tasks": ["put the bowl on the stove"], "length": 90}
+{"episode_index": 426, "tasks": ["put the bowl on the stove"], "length": 95}
+{"episode_index": 427, "tasks": ["put the bowl on the plate"], "length": 92}

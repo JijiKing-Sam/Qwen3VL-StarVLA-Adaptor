@@ -1,0 +1,5 @@
+assets: /root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO/libero/libero/assets
+bddl_files: /root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO/libero/libero/bddl_files
+benchmark_root: /root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO/libero/libero
+datasets: /root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO/datasets
+init_states: /root/autodl-tmp/starvla-official-qwen3vl-20260411/third_party/LIBERO/libero/libero/init_files

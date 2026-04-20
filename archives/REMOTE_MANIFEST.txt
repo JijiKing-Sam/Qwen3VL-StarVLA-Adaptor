@@ -1,0 +1,20 @@
+export_time=2026-04-12T00:05:01+08:00
+base=/root/autodl-tmp/starvla-official-qwen3vl-20260411
+repo=/root/autodl-tmp/starvla-official-qwen3vl-20260411/repo
+repo_commit=0f0a16f33216f6eaeb5a4a23cc20005c23516e90
+repo_status_begin
+ M deployment/model_server/server_policy.py
+ M deployment/model_server/tools/websocket_policy_client.py
+ M deployment/model_server/tools/websocket_policy_server.py
+ M examples/LIBERO/eval_files/eval_libero.py
+ M examples/LIBERO/eval_files/model2libero_interface.py
+ M starVLA/model/framework/QwenOFT.py
+ M starVLA/model/modules/action_model/MLP_ActionHeader.py
+?? deployment/model_server/tools/trace_tools.py
+repo_status_end
+qwen_base_model=/root/autodl-tmp/starvla-official-qwen3vl-20260411/repo/playground/Pretrained_models/Qwen3-VL-4B-Instruct
+checkpoint=/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/checkpoints/steps_50000_pytorch_model.pt
+libero_data=/root/autodl-tmp/starvla-official-qwen3vl-20260411/data/libero
+full_eval_log=/root/autodl-tmp/starvla-official-qwen3vl-20260411/logs/libero_eval_20260411_054831/eval_goal50.log
+trace_eval_log=/root/autodl-tmp/starvla-official-qwen3vl-20260411/logs/trace_smoke_20260411_215258/eval_trace.log
+trace_server_log=/root/autodl-tmp/starvla-official-qwen3vl-20260411/logs/trace_smoke_20260411_215258/server_trace.log

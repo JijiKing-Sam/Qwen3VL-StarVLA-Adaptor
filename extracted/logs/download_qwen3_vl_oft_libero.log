@@ -1,0 +1,30 @@
+[START] 2026-04-11T04:59:02+08:00 download StarVLA/Qwen3-VL-OFT-LIBERO-4in1
+[DEST] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1
+[DF] Filesystem      Size  Used Avail Use% Mounted on
+[DF] /dev/md0        350G   35G  316G  10% /root/autodl-tmp
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Downloading 'dataset_statistics.json' to '/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/download/4Cw2asS0la9cwZEZgVKjgGUhPs4=.d0a7aaa9e6e06d05c0014ebd0e5a04de7ec9f599.incomplete'
+Downloading 'config.yaml' to '/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/download/_ouC4VcfA9-o6nAiMaExMJW7X2A=.7c080c1821d4b451f5aea7ee1790fc010410e889.incomplete'
+Downloading 'checkpoints/steps_50000_pytorch_model.pt' to '/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/download/checkpoints/nShSbhOaFNXDVRVnSgJOP-10Buk=.80d7a2ab0b033ce49d84070eb1124a2f9718e5b1f0ef8e2db6e4c44478b05df9.incomplete'
+Downloading 'summary.jsonl' to '/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/download/NV0xBPYqxRpIGzs5DANJhW7hamU=.c7d54d1916451b43ba08fcc20f0b3d82312fbb0b.incomplete'
+Download complete. Moving file to /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/dataset_statistics.json
+Download complete. Moving file to /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/config.yaml
+Download complete. Moving file to /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/summary.jsonl
+Downloading '.gitattributes' to '/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/download/wPaCkH-WbT7GsmxMKKrNZTV4nSM=.a6344aac8c09253b3b630fb776ae94478aa0275b.incomplete'
+Downloading 'README.md' to '/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/download/Xn7B-BWUGOee2Y6hCZtEhtFu4BE=.1e1d3320abdd280423c1d6057912ea52dcad9bcd.incomplete'
+Downloading 'run_libero_train.sh' to '/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/download/INkebuJKs-ppod7Rsp7iNtgRO_I=.31aad1eafbf1961feda53c91fbb1cb5871486082.incomplete'
+Download complete. Moving file to /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.gitattributes
+Fetching 7 files:  14%|█▍        | 1/7 [00:02<00:15,  2.61s/it]Download complete. Moving file to /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/README.md
+Fetching 7 files:  29%|██▊       | 2/7 [00:02<00:06,  1.22s/it]Download complete. Moving file to /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/run_libero_train.sh
+Download complete. Moving file to /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/checkpoints/steps_50000_pytorch_model.pt
+Fetching 7 files:  43%|████▎     | 3/7 [08:10<14:52, 223.24s/it]Fetching 7 files: 100%|██████████| 7/7 [08:10<00:00, 70.04s/it] 
+/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1
+[DONE] 2026-04-11T05:07:13+08:00 downloaded
+[SIZE] 9.2G	/root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.cache/huggingface/.gitignore 1 bytes
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/.gitattributes 1519 bytes
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/README.md 1580 bytes
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/checkpoints/steps_50000_pytorch_model.pt 9785061050 bytes
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/config.yaml 1290 bytes
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/dataset_statistics.json 2905 bytes
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/run_libero_train.sh 2567 bytes
+[FILE] /root/autodl-tmp/starvla-official-qwen3vl-20260411/checkpoints/Qwen3-VL-OFT-LIBERO-4in1/summary.jsonl 85 bytes
