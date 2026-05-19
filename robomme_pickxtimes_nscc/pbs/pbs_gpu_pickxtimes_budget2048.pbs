@@ -1,0 +1,79 @@
+#PBS -N rbmme_pick2048
+#PBS -P personal-<NSCC_USER>
+#PBS -q normal
+#PBS -l select=1:ncpus=32:ngpus=2:mem=220GB
+#PBS -l walltime=08:00:00
+#PBS -j oe
+#PBS -o /scratch/users/nus/<NSCC_USER>/robomme_nscc/logs/pbs_gpu_pickxtimes_budget2048.out
+
+set -euo pipefail
+
+BASE=/scratch/users/nus/<NSCC_USER>/robomme_nscc
+CODE=$BASE/code/robomme_policy_learning
+SCRIPT=$BASE/scripts/nscc_robomme_gpu_cycle.sh
+OFFICIAL=$BASE/runs/official/perceptual-framesamp-modul/79999
+
+cd "$CODE"
+
+export BASE
+export RUN_STAMP=nscc_pickxtimes_budget_$(date +%Y%m%d_%H%M%S)
+export LOG_ROOT=$BASE/logs/$RUN_STAMP
+export SUMMARY=$LOG_ROOT/summary.tsv
+export VIEW_SUFFIX=taskfull
+export VIEW_SLUGS=pickxtimes
+export MAX_EP=50
+export TRAIN_TIMEOUT=150m
+export EVAL_TIMEOUT=180m
+export TRAIN_GPU=0
+export SERVER_GPU=0
+export EVAL_GPU=1
+export WANDB_PROJECT=starVLA_RoboMME_NSCC
+mkdir -p "$LOG_ROOT"
+
+printf "time\ttask\tconfig\texp\tckpt_or_steps\trc_or_ckpt\trate\ttrue_count\ttotal_or_log\n" > "$SUMMARY"
+source "$SCRIPT"
+
+make_official_wrapper() {
+  local history_config="$1"
+  local suffix="$2"
+  local exp="${RUN_STAMP}_official_${suffix}"
+  local root="$BASE/runs/ckpts/mme_vla_suite/$exp"
+  local ckpt_dir="$root/79999"
+
+  mkdir -p "$ckpt_dir/assets"
+  printf "%s" "$history_config" > "$root/history_config.txt"
+  rm -rf "$ckpt_dir/params" "$ckpt_dir/assets/robomme"
+  ln -s "$OFFICIAL/params" "$ckpt_dir/params"
+  ln -s "$OFFICIAL/assets/robomme" "$ckpt_dir/assets/robomme"
+  printf "%s\t%s\n" "$exp" "$ckpt_dir"
+}
+
+log "PickXtimes-only budget experiment started"
+ensure_ready || exit $?
+build_views || exit $?
+
+# Re-evaluate official 512 in the same job as the control.
+eval_official_best "PickXtimes" 18701 || true
+
+# Zero-shot 2048: same official weights and norm stats, only longer frame-sampling memory.
+wrapper_info="$(make_official_wrapper perceptual-framesamp2048-modul.yaml budget2048)"
+official2048_exp="$(printf "%s" "$wrapper_info" | cut -f1)"
+official2048_dir="$(printf "%s" "$wrapper_info" | cut -f2)"
+run_eval "PickXtimes" "mme_vla_suite" "$official2048_exp" "79999" 18702 "$official2048_dir" || true
+
+# Aligned specialist control: official norm stats, official 512 history budget.
+export HISTORY_CONFIG=perceptual-framesamp-modul.yaml
+export BATCH_SIZE=8
+export NUM_WORKERS=2
+export RUN_STAMP="${RUN_STAMP}_budget512"
+train_then_eval "PickXtimes" "pickxtimes" "mme_vla_suite_mem_action" 500 18703
+
+# 2048 specialist: same trainable set, but lower batch size for the 4x longer memory sequence.
+export HISTORY_CONFIG=perceptual-framesamp2048-modul.yaml
+export BATCH_SIZE=2
+export NUM_WORKERS=2
+export XLA_PYTHON_CLIENT_MEM_FRACTION=0.88
+export RUN_STAMP="${RUN_STAMP%_budget512}_budget2048"
+train_then_eval "PickXtimes" "pickxtimes" "mme_vla_suite_mem_action" 500 18704
+
+log "PickXtimes-only budget experiment finished"

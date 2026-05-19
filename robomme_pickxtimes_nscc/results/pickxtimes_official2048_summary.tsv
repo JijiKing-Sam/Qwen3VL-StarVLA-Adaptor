@@ -1,0 +1,2 @@
+time	task	config	exp	ckpt_or_steps	rc_or_ckpt	rate	true_count	total_or_log
+2026-05-20 02:58:36	PickXtimes	mme_vla_suite	nscc_pickxtimes_official2048_20260520_023747_official_budget2048	79999	0	0.34	17	50	/scratch/users/nus/<NSCC_USER>/robomme_nscc/logs/nscc_pickxtimes_official2048_20260520_023747/eval_nscc_pickxtimes_official2048_20260520_023747_official_budget2048_PickXtimes_ckpt79999.log

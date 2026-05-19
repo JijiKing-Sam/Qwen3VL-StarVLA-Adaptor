@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="380" viewBox="0 0 900 380">
+<rect width="100%" height="100%" fill="#fbfaf7"/>
+<text x="40" y="42" font-family="Georgia, serif" font-size="24" fill="#1d2528">Training loss snapshots</text>
+<line x1="75" y1="310" x2="850" y2="310" stroke="#9aa0a6"/>
+<line x1="75" y1="70" x2="75" y2="310" stroke="#9aa0a6"/>
+<polyline fill="none" stroke="#4f9d69" stroke-width="3" points="75.0,293.2 230.0,294.4 385.0,298.0 540.0,296.8 695.0,300.4"/>
+<circle cx="75.0" cy="293.2" r="4" fill="#4f9d69"/>
+<text x="75.0" y="285.2" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0014</text>
+<circle cx="230.0" cy="294.4" r="4" fill="#4f9d69"/>
+<text x="230.0" y="286.4" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0013</text>
+<circle cx="385.0" cy="298.0" r="4" fill="#4f9d69"/>
+<text x="385.0" y="290.0" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0010</text>
+<circle cx="540.0" cy="296.8" r="4" fill="#4f9d69"/>
+<text x="540.0" y="288.8" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0011</text>
+<circle cx="695.0" cy="300.4" r="4" fill="#4f9d69"/>
+<text x="695.0" y="292.4" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0008</text>
+<polyline fill="none" stroke="#d98c26" stroke-width="3" points="75.0,260.8 230.0,91.8 385.0,133.8 540.0,130.2 695.0,175.7"/>
+<circle cx="75.0" cy="260.8" r="4" fill="#d98c26"/>
+<text x="75.0" y="252.8" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0041</text>
+<circle cx="230.0" cy="91.8" r="4" fill="#d98c26"/>
+<text x="230.0" y="83.8" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0182</text>
+<circle cx="385.0" cy="133.8" r="4" fill="#d98c26"/>
+<text x="385.0" y="125.8" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0147</text>
+<circle cx="540.0" cy="130.2" r="4" fill="#d98c26"/>
+<text x="540.0" y="122.2" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0150</text>
+<circle cx="695.0" cy="175.7" r="4" fill="#d98c26"/>
+<text x="695.0" y="167.7" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">0.0112</text>
+<rect x="620" y="70" width="18" height="10" fill="#4f9d69"/><text x="646" y="80" font-family="Arial" font-size="13">512 budget</text>
+<rect x="620" y="92" width="18" height="10" fill="#d98c26"/><text x="646" y="102" font-family="Arial" font-size="13">2048 budget</text>
+<text x="455" y="352" text-anchor="middle" font-family="Arial" font-size="13" fill="#526064">training step</text>
+</svg>

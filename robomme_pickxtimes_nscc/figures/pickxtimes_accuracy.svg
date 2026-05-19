@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430">
+<rect width="100%" height="100%" fill="#fbfaf7"/>
+<text x="40" y="45" font-family="Georgia, serif" font-size="26" fill="#1d2528">PickXtimes 50-episode evaluation</text>
+<text x="40" y="72" font-family="Arial" font-size="14" fill="#526064">512 specialist matches official; 2048 budget sharply degrades performance.</text>
+<line x1="80" y1="330" x2="855" y2="330" stroke="#9aa0a6"/>
+<line x1="80" y1="90" x2="80" y2="330" stroke="#9aa0a6"/>
+<line x1="75" y1="330.0" x2="855" y2="330.0" stroke="#e6e1d8"/>
+<text x="38" y="335.0" font-family="Arial" font-size="12" fill="#687076">0%</text>
+<line x1="75" y1="271.2" x2="855" y2="271.2" stroke="#e6e1d8"/>
+<text x="38" y="276.2" font-family="Arial" font-size="12" fill="#687076">25%</text>
+<line x1="75" y1="212.5" x2="855" y2="212.5" stroke="#e6e1d8"/>
+<text x="38" y="217.5" font-family="Arial" font-size="12" fill="#687076">50%</text>
+<line x1="75" y1="153.8" x2="855" y2="153.8" stroke="#e6e1d8"/>
+<text x="38" y="158.8" font-family="Arial" font-size="12" fill="#687076">75%</text>
+<line x1="75" y1="95.0" x2="855" y2="95.0" stroke="#e6e1d8"/>
+<text x="38" y="100.0" font-family="Arial" font-size="12" fill="#687076">100%</text>
+<rect x="135" y="123.2" width="120" height="206.8" rx="8" fill="#2f6f73"/>
+<text x="195.0" y="113.2" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#1d2528">88%</text>
+<text x="195.0" y="354" text-anchor="middle" font-family="Arial" font-size="12" fill="#2f3a40">Official 512</text>
+<text x="195.0" y="386" text-anchor="middle" font-family="Arial" font-size="11" fill="#6f777d">baseline</text>
+<rect x="330" y="123.2" width="120" height="206.8" rx="8" fill="#4f9d69"/>
+<text x="390.0" y="113.2" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#1d2528">88%</text>
+<text x="390.0" y="354" text-anchor="middle" font-family="Arial" font-size="12" fill="#2f3a40">specialist 512</text>
+<text x="390.0" y="386" text-anchor="middle" font-family="Arial" font-size="11" fill="#6f777d">matches official</text>
+<rect x="525" y="250.1" width="120" height="79.9" rx="8" fill="#c8553d"/>
+<text x="585.0" y="240.1" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#1d2528">34%</text>
+<text x="585.0" y="354" text-anchor="middle" font-family="Arial" font-size="12" fill="#2f3a40">Official weights +</text>
+<text x="585.0" y="370" text-anchor="middle" font-family="Arial" font-size="12" fill="#2f3a40">2048</text>
+<text x="585.0" y="386" text-anchor="middle" font-family="Arial" font-size="11" fill="#6f777d">budget shift hurts</text>
+<rect x="720" y="231.3" width="120" height="98.7" rx="8" fill="#d98c26"/>
+<text x="780.0" y="221.3" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700" fill="#1d2528">42%</text>
+<text x="780.0" y="354" text-anchor="middle" font-family="Arial" font-size="12" fill="#2f3a40">specialist 2048</text>
+<text x="780.0" y="386" text-anchor="middle" font-family="Arial" font-size="11" fill="#6f777d">slightly recovers but still bad</text>
+</svg>

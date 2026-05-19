@@ -1,0 +1,5 @@
+id	name	description	budget	train_steps	success	total	accuracy	note
+official512	Official 512 budget	mme_vla_suite official ckpt 79999	512	none	44	50	0.88	baseline
+specialist512	PickXtimes specialist 512	mem_action 500-step specialist from official ckpt	512	500	44	50	0.88	matches official
+official2048	Official weights + 2048 budget	same official weights, changed frame-sampling budget only	2048	none	17	50	0.34	budget shift hurts
+specialist2048	PickXtimes specialist 2048	mem_action 500-step specialist with batch size 2	2048	500	21	50	0.42	slightly recovers but still bad

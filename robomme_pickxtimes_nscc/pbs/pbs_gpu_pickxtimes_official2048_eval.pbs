@@ -1,0 +1,48 @@
+#PBS -N rbmme_off2048
+#PBS -P personal-<NSCC_USER>
+#PBS -q normal
+#PBS -l select=1:ncpus=32:ngpus=2:mem=220GB
+#PBS -l walltime=02:00:00
+#PBS -j oe
+#PBS -o /scratch/users/nus/<NSCC_USER>/robomme_nscc/logs/pbs_gpu_pickxtimes_official2048_eval.out
+
+set -euo pipefail
+
+BASE=/scratch/users/nus/<NSCC_USER>/robomme_nscc
+CODE=$BASE/code/robomme_policy_learning
+SCRIPT=$BASE/scripts/nscc_robomme_gpu_cycle.sh
+OFFICIAL=$BASE/runs/official/perceptual-framesamp-modul/79999
+
+cd "$CODE"
+
+export BASE
+export RUN_STAMP=nscc_pickxtimes_official2048_$(date +%Y%m%d_%H%M%S)
+export LOG_ROOT=$BASE/logs/$RUN_STAMP
+export SUMMARY=$LOG_ROOT/summary.tsv
+export VIEW_SUFFIX=taskfull
+export VIEW_SLUGS=pickxtimes
+export MAX_EP=50
+export EVAL_TIMEOUT=180m
+export SERVER_GPU=0
+export EVAL_GPU=1
+mkdir -p "$LOG_ROOT"
+
+printf "time\ttask\tconfig\texp\tckpt_or_steps\trc_or_ckpt\trate\ttrue_count\ttotal_or_log\n" > "$SUMMARY"
+source "$SCRIPT"
+
+log "PickXtimes official 2048-only eval started"
+ensure_ready || exit $?
+build_views || exit $?
+
+exp="${RUN_STAMP}_official_budget2048"
+root="$BASE/runs/ckpts/mme_vla_suite/$exp"
+ckpt_dir="$root/79999"
+mkdir -p "$ckpt_dir/assets"
+printf "%s" "perceptual-framesamp2048-modul.yaml" > "$root/history_config.txt"
+rm -rf "$ckpt_dir/params" "$ckpt_dir/assets/robomme"
+ln -s "$OFFICIAL/params" "$ckpt_dir/params"
+ln -s "$OFFICIAL/assets/robomme" "$ckpt_dir/assets/robomme"
+
+run_eval "PickXtimes" "mme_vla_suite" "$exp" "79999" 18801 "$ckpt_dir" || true
+
+log "PickXtimes official 2048-only eval finished"

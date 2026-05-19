@@ -2,6 +2,12 @@
 
 这是从远端独立复现目录导出的本地学习包，用来学习 StarVLA Qwen3-VL-OFT + LIBERO eval 的全过程数据流。
 
+## RoboMME PickXtimes NSCC Study
+
+新增公开展示入口：[`robomme_pickxtimes_nscc/`](robomme_pickxtimes_nscc/)
+
+该目录整理了 RoboMME PickXtimes-only 的有效训练与评测：官方 512-budget baseline、norm-stat 修正后的 512 specialist、官方权重 2048-budget zero-shot、2048 specialist，以及对应 W&B 链接、离线图、结果表和有效代码 patch。
+
 ## 目录结构
 
 - `archives/`: 从远端下载的 manifest、校验文件和 patch。压缩包本体在本地存在，但 GitHub 版通过 `.gitignore` 排除，因为其中有超过 GitHub 单文件限制的大二进制文件。
